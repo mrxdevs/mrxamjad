@@ -3,8 +3,22 @@ import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/profile";
 
 export default function Home() {
-  const featured = projects.find((p) => p.featured) ?? projects[0];
-  const sideCards = projects.filter((p) => p !== featured).slice(0, 2);
+  const exclude = new Set([
+    "Ntelcare Family App",
+    "Raptee App",
+    "Baatu: Speak with Confidence",
+    "Digiwellie",
+  ]);
+  const candidates = projects.filter((p) => !exclude.has(p.title));
+  const featured = candidates.find((p) => p.featured) ?? candidates[0];
+  const sideCards = candidates.filter((p) => p !== featured).slice(0, 2);
+  if (!featured) {
+    return (
+      <div className="pb-20">
+        <Hero />
+      </div>
+    );
+  }
   return (
     <div className="pb-20">
       <Hero />

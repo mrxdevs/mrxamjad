@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0c10;
+  --foreground: #e5e7eb;
+  --accent: #a855f7;
+  --accent2: #7c3aed;
 }
 
 @theme inline {
@@ -14,13 +16,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b0c10;
+    --foreground: #e5e7eb;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+body { background: var(--background); color: var(--foreground); }
+
+.gradient { background: linear-gradient(90deg, #a855f7, #e879f9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-glow { position: absolute; inset: -10% -20% 0 -20%; background: radial-gradient(600px 300px at 50% 0%, rgba(168,85,247,.25), transparent 60%), radial-gradient(600px 300px at 0% 50%, rgba(96,165,250,.15), transparent 60%); filter: blur(40px); opacity: 0.8; }
+.nav-btn { display:inline-flex; align-items:center; justify-content:center; padding:.5rem 1rem; border-radius:9999px; border:1px solid rgba(255,255,255,.1); color:#e5e7eb; background: rgba(255,255,255,.04); }
+.nav-btn:hover { background: rgba(255,255,255,.08); }
+.cta-primary { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1rem; border-radius:9999px; background: linear-gradient(90deg,#a855f7,#7c3aed); color:white; font-weight:600; }
+.cta-secondary { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1rem; border-radius:9999px; border:1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); color:#e5e7eb; }
+.cta-secondary:hover { background: rgba(255,255,255,.1); }
+.rail { height: 360px; width: 48px; border-radius: 24px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; }
+.rail-text { writing-mode: vertical-rl; text-orientation: mixed; letter-spacing: .2em; font-weight: 600; color: #e5e7eb; }
+.rail-dot { height: 32px; width: 32px; border-radius: 9999px; border:1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.08); display:block; }
+.chip { border:1px solid rgba(255,255,255,.15); border-radius:9999px; padding:.25rem .6rem; background: rgba(255,255,255,.06); }

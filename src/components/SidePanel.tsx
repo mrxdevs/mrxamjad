@@ -12,7 +12,7 @@ type Item = {
 export default function SidePanel({ label, side, items }: { label: string; side: "left" | "right"; items: Item[] }) {
   const [open, setOpen] = useState(false);
   const [anim, setAnim] = useState(false);
-  const align = side === "left" ? "-left-12" : "-right-12";
+  const align = side === "left" ? "left-0" : "right-0";
   const pos = side === "left" ? "left-0" : "right-0";
   const translate = side === "left" ? "-translate-x-full" : "translate-x-full";
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function SidePanel({ label, side, items }: { label: string; side:
     return () => window.removeEventListener("panel-open", handler as EventListener);
   }, [side]);
   return (
-    <div className="absolute top-0 left-0 right-0 z-30 w-full">
+    <div className="fixed top-24 left-0 right-0 z-30 w-full">
       <div className={`absolute ${align}`}>
         <button
           className="flex items-center gap-2"
@@ -62,7 +62,8 @@ export default function SidePanel({ label, side, items }: { label: string; side:
 
       {open && (
         <div
-          className={`pointer-events-auto absolute ${pos} top-0 z-30 h-[480px] w-[min(640px,48vw)] rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl transition-transform duration-300 ${anim ? "translate-x-0" : translate}`}
+          className={`pointer-events-auto absolute ${pos} top-0 z-30 h-[520px] rounded-3xl border border-white/10 bg-background shadow-2xl transition-transform duration-300 ${anim ? "translate-x-0" : translate}`}
+          style={{ width: "calc(100% - 60px)" }}
         >
           <div className="p-6">
             <Carousel3 items={items} />

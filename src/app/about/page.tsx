@@ -1,10 +1,13 @@
 import { certifications, achievements, education, languages } from "../../data/profile";
+import SideRail from "../../components/SideRail";
 
 export const metadata = { title: "About — Amjad Ali" };
 
 export default function About() {
   return (
-    <div className="py-16">
+    <div className="py-16 relative">
+      <SideRail label="Projects" side="left" />
+      <SideRail label="Experience" side="right" />
       <h2 className="text-3xl font-bold">About</h2>
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -33,4 +36,3 @@ export default function About() {
     </div>
   );
 }
-

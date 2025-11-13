@@ -1,13 +1,13 @@
-import { skills } from "../../data/profile";
-import SideRail from "../../components/SideRail";
+import { skills, projects, experience } from "../../data/profile";
+import SidePanel from "../../components/SidePanel";
 
 export const metadata = { title: "Techs — Amjad Ali" };
 
 export default function Techs() {
   return (
     <div className="py-16 relative">
-      <SideRail label="Projects" side="left" />
-      <SideRail label="Experience" side="right" />
+      <SidePanel label="Projects" side="left" items={projects.map(p=>({title:p.title, summary:p.summary, points:p.points}))} />
+      <SidePanel label="Experience" side="right" items={experience.map(e=>({title:`${e.role} — ${e.company}`, summary:`${e.period} | ${e.location}`, points:e.bullets}))} />
       <h2 className="text-3xl font-bold">Techs</h2>
       <div className="mt-8 grid gap-8 md:grid-cols-3">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6">

@@ -12,7 +12,7 @@ type Item = {
 export default function SidePanel({ label, side, items }: { label: string; side: "left" | "right"; items: Item[] }) {
   const [open, setOpen] = useState(false);
   const [anim, setAnim] = useState(false);
-  const align = side === "left" ? "left-3" : "right-3";
+  const align = side === "left" ? "-left-12" : "-right-12";
   const pos = side === "left" ? "left-0" : "right-0";
   const translate = side === "left" ? "-translate-x-full" : "translate-x-full";
   useEffect(() => {
@@ -46,11 +46,9 @@ export default function SidePanel({ label, side, items }: { label: string; side:
             }
           }}
         >
-          {side === "left" && <span className="rail-dot" />}
           <div className="rail">
             <span className="rail-text">{label}</span>
           </div>
-          {side === "right" && <span className="rail-dot" />}
         </button>
       </div>
 

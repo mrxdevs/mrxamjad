@@ -57,7 +57,7 @@ export const projects = [
       "99.9% uptime and 30% reduced battery consumption.",
       "Raptee Map, IoT, Push Notifications, in-app chat.",
     ],
-    links: { playstore: "#", appstore: "#", caseStudy: "#" },
+    links: { playstore: "#", appstore: "#", caseStudy: "#" } as Record<string, string>,
     featured: true,
   },
   {
@@ -68,7 +68,7 @@ export const projects = [
       "Sub-second alert latency via WebSocket notifications.",
       "Instant alerts via Firebase push notifications.",
     ],
-    links: { playstore: "#", appstore: "#", caseStudy: "#" },
+    links: { playstore: "#", appstore: "#", caseStudy: "#" } as Record<string, string>,
     featured: true,
   },
   {
@@ -79,7 +79,7 @@ export const projects = [
       "Adaptive UIs optimized for Android and iOS.",
       "10K+ active users, 4.6 Play Store rating.",
     ],
-    links: { site: "#", caseStudy: "#" },
+    links: { site: "#", caseStudy: "#" } as Record<string, string>,
     featured: true,
   },
   {
@@ -89,7 +89,7 @@ export const projects = [
       "Concurrent users handled via Socket-based architecture.",
       "Stripe integration for PCI-compliant transactions.",
     ],
-    links: { site: "#", playstore: "#", caseStudy: "#" },
+    links: { site: "#", playstore: "#", caseStudy: "#" } as Record<string, string>,
     featured: true,
   },
 ];

@@ -16,6 +16,8 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-2">
             <Link href="/" className="nav-btn">Home</Link>
+            <Link href="/projects" className="nav-btn">Projects</Link>
+            <Link href="/experience" className="nav-btn">Experience</Link>
             <Link href="/techs" className="nav-btn">Techs</Link>
             <Link href="/about" className="nav-btn">About</Link>
           </div>

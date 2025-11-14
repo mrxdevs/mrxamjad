@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageAnimator from "../components/PageAnimator";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#14121f] text-zinc-200">
           <Navbar />
           <main className="relative mx-auto max-w-6xl px-6 sm:px-8">
-            {children}
+            <PageAnimator>{children}</PageAnimator>
           </main>
           <Footer />
         </div>

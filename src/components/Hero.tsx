@@ -1,12 +1,9 @@
 import Link from "next/link";
-import SidePanel from "./SidePanel";
-import { contact, projects, experience } from "../data/profile";
+import { contact } from "../data/profile";
 
 export default function Hero() {
   return (
     <section className="relative py-24">
-      <SidePanel label="Projects" side="left" items={projects.map(p=>({title:p.title, summary:p.summary, points:p.points}))} />
-      <SidePanel label="Experience" side="right" items={experience.map(e=>({title:`${e.role} — ${e.company}`, summary:`${e.period} | ${e.location}`, points:e.bullets}))} />
       <div className="mx-auto max-w-4xl text-center sm:text-left">
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight">
           <span className="block">Creative <span className="gradient">Mobile</span> &</span>

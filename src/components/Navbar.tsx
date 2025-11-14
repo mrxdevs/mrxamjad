@@ -20,6 +20,7 @@ export default function Navbar() {
             <Link href="/experience" className="nav-btn">Experience</Link>
             <Link href="/techs" className="nav-btn">Techs</Link>
             <Link href="/about" className="nav-btn">About</Link>
+            <Link href="/contact" className="nav-btn">Contact</Link>
           </div>
           <div>
             <Link

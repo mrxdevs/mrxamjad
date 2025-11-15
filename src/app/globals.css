@@ -4138,3 +4138,214 @@ erience Section (Home Page) */
     flex-direction: column;
   }
 }
+
+/* Why H
+ire Me Section */
+.why-hire-me {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(168, 85, 247, 0.02));
+  border-radius: 32px;
+  margin: 3rem 0;
+}
+
+.why-hire-content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: center;
+  padding: 3rem;
+}
+
+/* Left Side - Avatar */
+.why-hire-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hire-avatar-circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(232, 121, 249, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hire-avatar-circle::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(135deg, #a855f7, #e879f9);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.hire-avatar {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(124, 58, 237, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  font-weight: 800;
+  color: white;
+  border: 4px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Right Side - Content */
+.why-hire-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.why-hire-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.why-hire-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #9ca3af;
+  max-width: 500px;
+}
+
+/* Stats */
+.why-hire-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.stat-item {
+  text-align: left;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a855f7, #e879f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* CTA Button */
+.why-hire-cta {
+  margin-top: 1rem;
+}
+
+.hire-me-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 3rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.hire-me-button:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-hire-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hire-avatar-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hire-avatar {
+    width: 270px;
+    height: 270px;
+    font-size: 5rem;
+  }
+
+  .why-hire-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .why-hire-description {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .why-hire-stats {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .why-hire-cta {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-hire-title {
+    font-size: 2rem;
+  }
+
+  .hire-avatar-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hire-avatar {
+    width: 220px;
+    height: 220px;
+    font-size: 4rem;
+  }
+
+  .why-hire-stats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .hire-me-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

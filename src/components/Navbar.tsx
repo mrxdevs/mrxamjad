@@ -1,34 +1,42 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { contact } from "../data/profile";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/projects", label: "Project" },
+    { href: "/experience", label: "Resume" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
-        <nav className="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 shadow-lg shadow-purple-900/20">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-fuchsia-500 text-white font-semibold">
+        <nav className="navbar-pill">
+          <div className="navbar-content">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`navbar-link ${pathname === link.href ? "active" : ""}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="navbar-logo">
+            <div className="logo-icon">
               {contact.name.split(" ").map((n) => n[0]).join("")}
             </div>
-            <span className="hidden sm:block text-sm text-zinc-300">{contact.name}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Link href="/" className="nav-btn">Home</Link>
-            <Link href="/projects" className="nav-btn">Projects</Link>
-            <Link href="/experience" className="nav-btn">Experience</Link>
-            <Link href="/techs" className="nav-btn">Techs</Link>
-            <Link href="/about" className="nav-btn">About</Link>
-            <Link href="/contact" className="nav-btn">Contact</Link>
-          </div>
-          <div>
-            <Link
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-md hover:opacity-90"
-            >
-              Hire Me <span className="inline-block">→</span>
-            </Link>
+            <span className="logo-text">{contact.name.toUpperCase()}</span>
           </div>
         </nav>
       </div>

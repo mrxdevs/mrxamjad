@@ -2,24 +2,59 @@ import Link from "next/link";
 import { contact } from "../data/profile";
 
 export default function Hero() {
+  const yearsOfExperience = new Date().getFullYear() - 2022; // Started in 2022
+
   return (
-    <section className="relative py-24">
-      <div className="mx-auto max-w-4xl text-center sm:text-left">
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-          <span className="block">Creative <span className="gradient">Mobile</span> &</span>
-          <span className="block gradient">Frontend Developer</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-zinc-400">
-          I design and build beautifully simple apps and systems. Crafting elegant
-          solutions for complex problems is my passion.
-        </p>
-        <div className="mt-8 flex gap-4">
-          <Link href="/projects" className="cta-primary">View My Work ↓</Link>
-          <a href={`mailto:${contact.email}`} className="cta-secondary">Contact Me</a>
+    <section className="hero-section">
+      <div className="hero-container">
+        {/* Left Side - Quote */}
+        <div className="hero-quote">
+          <div className="quote-mark">❝</div>
+          <p className="quote-text">
+            {contact.name}'s exceptional product design ensure our project's success.
+            Highly Recommended
+          </p>
         </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="hero-glow" />
+
+        {/* Center - Main Content */}
+        <div className="hero-main">
+          <div className="hero-greeting">
+            <span className="greeting-badge">Hello! 👋</span>
+          </div>
+
+          <h1 className="hero-title">
+            I'm <span className="gradient">{contact.name.split(" ")[0]}</span>,<br />
+            <span className="hero-subtitle">Mobile Developer</span>
+          </h1>
+
+          <div className="hero-image-container">
+            <div className="hero-image-circle">
+              <div className="hero-avatar">
+                {contact.name.split(" ").map((n) => n[0]).join("")}
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-actions">
+            <Link href="/projects" className="hero-btn-primary">
+              Portfolio ↗
+            </Link>
+            <Link href="/contact" className="hero-btn-secondary">
+              Hire me
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side - Experience */}
+        <div className="hero-experience">
+          <div className="experience-stars">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="star">⭐</span>
+            ))}
+          </div>
+          <div className="experience-years">{yearsOfExperience}+ Years</div>
+          <div className="experience-label">Experience</div>
+        </div>
       </div>
     </section>
   );

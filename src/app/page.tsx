@@ -4,6 +4,7 @@ import WhyHireMe from "../components/WhyHireMe";
 import PortfolioShowcase from "../components/PortfolioShowcase";
 import Testimonials from "../components/Testimonials";
 import BlogSection from "../components/BlogSection";
+import CTASection from "../components/CTASection";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
       </section>
       <section className="mx-auto mt-16 max-w-6xl">
         <BlogSection />
+      </section>
+      <section className="mt-16">
+        <CTASection />
       </section>
     </div>
   );

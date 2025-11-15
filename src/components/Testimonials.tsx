@@ -46,9 +46,9 @@ export default function Testimonials() {
                     Speak to <span className="gradient">My Results</span>
                 </h2>
                 <p className="testimonials-subtitle-new">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum
-                    ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    lobortis orci elementum egestas lobortis.
+                    Discover what clients say about working with me. These testimonials reflect
+                    the quality, dedication, and results I deliver in every project. From concept
+                    to completion, I strive to exceed expectations and create lasting partnerships.
                 </p>
             </div>
 

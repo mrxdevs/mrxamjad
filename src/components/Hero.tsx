@@ -6,7 +6,7 @@ import Image from "next/image";
 import { contact } from "../data/profile";
 
 export default function Hero() {
-  const yearsOfExperience = new Date().getFullYear() - 2022; // Started in 2022
+  const yearsOfExperience = new Date().getFullYear() - 2023; // Started in 2022
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -36,10 +36,10 @@ export default function Hero() {
             <div >
               {!imageError ? (
                 <Image
-                  src="/hero-image.png"
+                  src="/women_profile.png"
                   alt={`${contact.name} - Mobile Developer`}
-                  width={280}
-                  height={480}
+                  width={680}
+                  height={680}
                   className="hero-profile-image"
                   onError={() => setImageError(true)}
                   priority

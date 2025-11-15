@@ -1,15 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { contact } from "../data/profile";
 
 export default function WhyHireMe() {
+    const [imageError, setImageError] = useState(false);
+
     const stats = [
         {
-            number: "450+",
+            number: "25+",
             label: "Project Completed",
         },
         {
-            number: "450+",
-            label: "Project Completed",
+            number: "15+",
+            label: "Clients",
         },
     ];
 
@@ -18,10 +24,22 @@ export default function WhyHireMe() {
             <div className="why-hire-content">
                 {/* Left Side - Image/Avatar */}
                 <div className="why-hire-image">
-                    <div className="hire-avatar-circle">
-                        <div className="hire-avatar">
-                            {contact.name.split(" ").map((n) => n[0]).join("")}
-                        </div>
+                    <div >
+                        {!imageError ? (
+                            <Image
+                                src="/women_profile.png"
+                                alt={`${contact.name} - Mobile Developer`}
+                                width={570}
+                                height={570}
+                                className="hire-profile-image"
+                                onError={() => setImageError(true)}
+                                priority
+                            />
+                        ) : (
+                            <div className="hire-avatar">
+                                {contact.name.split(" ").map((n) => n[0]).join("")}
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -31,8 +49,9 @@ export default function WhyHireMe() {
                         Why <span className="gradient">Hire me</span>?
                     </h2>
                     <p className="why-hire-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc,
-                        posuere in justo vulputate, bibendum sodales
+                        I'm a passionate mobile developer who transforms ideas into stunning,
+                        user-friendly applications. With expertise in React Native, Flutter, and native
+                        development, I create seamless experiences that users love and businesses trust.
                     </p>
 
                     {/* Stats */}

@@ -4209,6 +4209,16 @@ ire Me Section */
   z-index: 1;
 }
 
+.hire-profile-image {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
 /* Right Side - Content */
 .why-hire-text {
   display: flex;

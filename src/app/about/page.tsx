@@ -70,7 +70,7 @@ export default function About() {
               <p>
                 Hello! I'm {contact.name}, a passionate <strong>Mobile Developer</strong> and <strong>UI/UX Designer</strong> with a
                 track for creating intuitive, beautiful, and high-performing digital experiences.
-                With over 3 years in the field, I thrive on turning complex problems into elegant,
+                With over 2 years in the field, I thrive on turning complex problems into elegant,
                 user-centric solutions.
               </p>
               <p>

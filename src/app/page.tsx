@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import ProjectCarousel from "../components/ProjectCarousel";
+import WorkExperience from "../components/WorkExperience";
 import WhyHireMe from "../components/WhyHireMe";
 import Testimonials from "../components/Testimonials";
 import BlogSection from "../components/BlogSection";
@@ -11,6 +12,9 @@ export default function Home() {
       <Hero />
       <section className="mx-auto mt-8 max-w-6xl">
         <ProjectCarousel />
+      </section>
+      <section className="mx-auto mt-16 max-w-6xl">
+        <WorkExperience />
       </section>
       <section className="mx-auto mt-16 max-w-6xl">
         <WhyHireMe />

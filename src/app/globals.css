@@ -3870,3 +3870,271 @@ main {
     padding: 0 3rem;
   }
 }
+
+/* Work Exp
+erience Section (Home Page) */
+.work-experience-section {
+  padding: 2rem 0;
+}
+
+.work-experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.work-experience-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.work-experience-see-all {
+  padding: 0.875rem 2rem;
+  background: linear-gradient(90deg, #a855f7, #e879f9);
+  color: white;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  white-space: nowrap;
+}
+
+.work-experience-see-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+.work-experience-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.work-experience-item {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.work-experience-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Left Side - Company Info */
+.work-exp-left {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.work-exp-company {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.work-exp-period {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+}
+
+.work-exp-location {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Center - Timeline Line & Dot */
+.work-exp-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work-exp-line {
+  position: absolute;
+  top: 0;
+  bottom: -3rem;
+  width: 2px;
+  background: linear-gradient(180deg,
+      rgba(168, 85, 247, 0.3) 0%,
+      rgba(168, 85, 247, 0.1) 50%,
+      rgba(168, 85, 247, 0.3) 100%);
+}
+
+.work-experience-item:last-child .work-exp-line {
+  display: none;
+}
+
+.work-exp-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(20, 18, 31, 1);
+  border: 3px solid rgba(107, 114, 128, 0.5);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.work-exp-dot.accent {
+  border-color: #a855f7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.work-exp-dot-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(107, 114, 128, 0.5);
+  transition: all 0.3s ease;
+}
+
+.work-exp-dot.accent .work-exp-dot-inner {
+  background: linear-gradient(135deg, #a855f7, #e879f9);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.work-experience-item:hover .work-exp-dot {
+  transform: scale(1.2);
+  border-color: #a855f7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.work-experience-item:hover .work-exp-dot-inner {
+  background: linear-gradient(135deg, #a855f7, #e879f9);
+}
+
+/* Right Side - Role Info */
+.work-exp-right {
+  padding-left: 1rem;
+}
+
+.work-exp-role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.work-exp-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(168, 85, 247, 0.15);
+  color: #e879f9;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.work-exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.work-exp-bullets li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #9ca3af;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.work-exp-bullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #a855f7;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .work-experience-title {
+    font-size: 2.5rem;
+  }
+
+  .work-experience-item {
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 1.5rem;
+  }
+
+  .work-exp-company,
+  .work-exp-role {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-experience-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .work-experience-title {
+    font-size: 2rem;
+  }
+
+  .work-experience-see-all {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .work-experience-item {
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .work-exp-left {
+    display: none;
+  }
+
+  .work-exp-center {
+    grid-column: 1;
+  }
+
+  .work-exp-right {
+    grid-column: 2;
+    padding-left: 0;
+  }
+
+  .work-exp-role {
+    font-size: 1.25rem;
+  }
+
+  .work-exp-company {
+    font-size: 1.125rem;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Show company info in right column on mobile */
+  .work-exp-right::before {
+    content: '';
+    display: block;
+  }
+
+  .work-exp-right {
+    display: flex;
+    flex-direction: column;
+  }
+}

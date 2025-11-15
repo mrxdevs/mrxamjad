@@ -368,6 +368,7 @@ a:active {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   left: 50%;
+  margin-left: -210px;
   transform-origin: center center;
 }
 
@@ -377,6 +378,7 @@ a:active {
   border-radius: 28px;
   border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2), 0 0 0 1px rgba(168, 85, 247, 0.1);
+  margin-left: -240px;
 }
 
 .carousel-card:hover {
@@ -739,15 +741,15 @@ a:active {
   }
 
   .carousel-card {
-    width: 380px;
+    width: 350px;
     height: 400px;
-    margin-left: -190px;
+    margin-left: -175px;
   }
 
   .carousel-card.active {
-    width: 420px;
+    width: 400px;
     height: 440px;
-    margin-left: -210px;
+    margin-left: -200px;
   }
 }
 

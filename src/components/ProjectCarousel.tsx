@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { projects as data } from "../data/profile";
 
 export default function ProjectCarousel() {
@@ -34,6 +35,16 @@ export default function ProjectCarousel() {
 
   return (
     <div className="carousel">
+      {/* Header */}
+      <div className="carousel-header">
+        <h2 className="carousel-title">
+          Let's have a look at<br />
+          my <span className="gradient">Portfolio</span>
+        </h2>
+        <Link href="/projects" className="carousel-see-all">
+          See All
+        </Link>
+      </div>
       <div className="carousel-container">
         <div className="carousel-track">
           {items.map((project, index) => {

@@ -1,7 +1,6 @@
 import Hero from "../components/Hero";
 import ProjectCarousel from "../components/ProjectCarousel";
-
-import PortfolioShowcase from "../components/PortfolioShowcase";
+import WhyHireMe from "../components/WhyHireMe";
 import Testimonials from "../components/Testimonials";
 import BlogSection from "../components/BlogSection";
 import CTASection from "../components/CTASection";
@@ -14,10 +13,7 @@ export default function Home() {
         <ProjectCarousel />
       </section>
       <section className="mx-auto mt-16 max-w-6xl">
-
-      </section>
-      <section className="mx-auto mt-16 max-w-6xl">
-        <PortfolioShowcase />
+        <WhyHireMe />
       </section>
       <section className="mx-auto mt-16 max-w-6xl">
         <Testimonials />

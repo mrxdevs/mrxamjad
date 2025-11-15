@@ -1,8 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { contact } from "../data/profile";
 
 export default function Hero() {
   const yearsOfExperience = new Date().getFullYear() - 2022; // Started in 2022
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section className="hero-section">
@@ -28,12 +33,25 @@ export default function Hero() {
           </h1>
 
           <div className="hero-image-container">
-            <div className="hero-image-circle">
-              <div className="hero-avatar">
-                {contact.name.split(" ").map((n) => n[0]).join("")}
-              </div>
+            <div >
+              {!imageError ? (
+                <Image
+                  src="/hero-image.png"
+                  alt={`${contact.name} - Mobile Developer`}
+                  width={280}
+                  height={480}
+                  className="hero-profile-image"
+                  onError={() => setImageError(true)}
+                  priority
+                />
+              ) : (
+                <div className="hero-avatar">
+                  {contact.name.split(" ").map((n) => n[0]).join("")}
+                </div>
+              )}
             </div>
           </div>
+
 
           <div className="hero-actions">
             <Link href="/projects" className="hero-btn-primary">

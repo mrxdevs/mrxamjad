@@ -685,6 +685,14 @@ a:active {
   border: 3px solid rgba(168, 85, 247, 0.3);
 }
 
+.hero-profile-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(168, 85, 247, 0.3);
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;

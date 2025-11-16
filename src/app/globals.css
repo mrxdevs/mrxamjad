@@ -4627,8 +4627,6 @@ estimonials Section - New Design */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
 }
 
 .about-image-placeholder {
@@ -4637,9 +4635,6 @@ estimonials Section - New Design */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(124, 58, 237, 0.2));
-  border-radius: 16px;
-  border: 2px solid rgba(168, 85, 247, 0.3);
 }
 
 .placeholder-text {

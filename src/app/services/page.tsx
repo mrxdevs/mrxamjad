@@ -13,7 +13,12 @@ export default function ServicesPage() {
                 "Native Performance",
                 "App Store Deployment",
             ],
-            icon: "📱",
+            icon: (
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                    <line x1="12" y1="18" x2="12" y2="18" />
+                </svg>
+            ),
         },
         {
             title: "UI/UX Design",
@@ -24,7 +29,11 @@ export default function ServicesPage() {
                 "Design Systems",
                 "Responsive Design",
             ],
-            icon: "🎨",
+            icon: (
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                </svg>
+            ),
         },
         {
             title: "Web Development",
@@ -35,7 +44,13 @@ export default function ServicesPage() {
                 "SEO Optimization",
                 "Performance Tuning",
             ],
-            icon: "💻",
+            icon: (
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+            ),
         },
         {
             title: "Backend & APIs",
@@ -46,7 +61,12 @@ export default function ServicesPage() {
                 "Cloud Infrastructure",
                 "Real-time Features",
             ],
-            icon: "⚙️",
+            icon: (
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2" />
+                </svg>
+            ),
         },
     ];
 

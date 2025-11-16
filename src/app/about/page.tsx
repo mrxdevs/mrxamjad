@@ -11,18 +11,32 @@ export default function About() {
   const skillCategories = [
     {
       title: "Mobile Development",
-      skills: ["Flutter", "Kotlin", "Swift", "React Native", "Jetpack Compose", "SwiftUI"],
-      icon: "📱"
+      skills: ["Flutter", "Kotlin", "Java", "Swift", "React Native", "Jetpack Compose", "SwiftUI"],
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+          <line x1="12" y1="18" x2="12" y2="18" />
+        </svg>
+      )
     },
     {
       title: "UI/UX Design",
       skills: ["Figma", "Sketch", "Adobe XD", "Prototyping", "User Research", "Material Design 3"],
-      icon: "🎨"
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+        </svg>
+      )
     },
     {
       title: "Backend & DevOps",
-      skills: ["Node.js", "Express", "Docker", "AWS", "CI/CD", "MongoDB"],
-      icon: "⚙️"
+      skills: ["Node.js", "Java", "Express", "Docker", "AWS", "CI/CD", "MongoDB"],
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2" />
+        </svg>
+      )
     }
   ];
 
@@ -100,7 +114,12 @@ export default function About() {
       <section className="about-credentials">
         <div className="credentials-container">
           <div className="credential-card">
-            <div className="credential-icon">🎓</div>
+            <div className="credential-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
             <h3 className="credential-title">Education</h3>
             <p className="credential-institute">{education.institute}</p>
             <p className="credential-degree">{education.degree}</p>
@@ -108,7 +127,16 @@ export default function About() {
             <p className="credential-cgpa">CGPA: {education.cgpa}</p>
           </div>
           <div className="credential-card">
-            <div className="credential-icon">🏆</div>
+            <div className="credential-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+              </svg>
+            </div>
             <h3 className="credential-title">Achievements</h3>
             <ul className="credential-list">
               {achievements.map((achievement, idx) => (

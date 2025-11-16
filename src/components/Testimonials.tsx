@@ -7,24 +7,24 @@ export default function Testimonials() {
 
     const testimonials = [
         {
-            quote: "ligula a dignissim. Lorem sed lobortis orci elementum itas lobortis.Sed lobortis orci",
-            author: "Fawzl Sayed",
-            role: "UI/UX Designer",
-            avatar: "FS",
+            quote: "Working with this developer was an absolute pleasure. They delivered a stunning, responsive website that exceeded our expectations. The attention to detail and commitment to quality was evident throughout the entire project.",
+            author: "Sarah Mitchell",
+            role: "Marketing Director",
+            avatar: "SM",
             rating: 5.0,
         },
         {
-            quote: "consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis orci elementum egestas lobortis.",
-            author: "Fawzl Sayed",
-            role: "UI/UX Designer",
-            avatar: "FS",
+            quote: "Exceptional technical skills combined with great communication. The project was completed on time and within budget. I particularly appreciated the proactive approach to solving challenges and the clean, maintainable code delivered.",
+            author: "James Chen",
+            role: "Product Manager",
+            avatar: "JC",
             rating: 5.0,
         },
         {
-            quote: "consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.",
-            author: "Fawzl Sayed",
-            role: "UI/UX Designer",
-            avatar: "FS",
+            quote: "Outstanding work on our e-commerce platform. The developer understood our business needs perfectly and translated them into a seamless user experience. Highly recommend for any web development project.",
+            author: "Emily Rodriguez",
+            role: "CEO, TechStart Inc",
+            avatar: "ER",
             rating: 5.0,
         },
     ];

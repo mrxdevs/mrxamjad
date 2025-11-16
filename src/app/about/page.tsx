@@ -2,31 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { contact, achievements, education } from "../../data/profile";
 
 export default function About() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const testimonials = [
-    {
-      quote: "Amjad is an exceptional talent. His attention to detail and creative vision transformed our project. He's not just a developer, he's a true partner who invests in the success of the product.",
-      author: "Sarah Johnson",
-      role: "CEO @ TechCorp",
-      avatar: "SJ"
-    },
-    {
-      quote: "Working with Amjad was a game-changer for our mobile app. His expertise in Flutter and native development helped us achieve 99.9% uptime and exceptional performance.",
-      author: "Michael Chen",
-      role: "CTO @ StartupHub",
-      avatar: "MC"
-    },
-    {
-      quote: "Amjad's ability to turn complex requirements into elegant solutions is remarkable. His code quality and attention to user experience set him apart from other developers.",
-      author: "Emily Rodriguez",
-      role: "Product Manager @ InnovateLabs",
-      avatar: "ER"
-    }
-  ];
+  const [imageError, setImageError] = useState(false);
 
   const skillCategories = [
     {
@@ -71,15 +51,24 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="about-avatar-container">
-            <div className="about-avatar">
-              <div className="avatar-gradient-ring"></div>
-              <div className="avatar-image">
-                <div className="avatar-placeholder">
+          <div className="about-image-container">
+            {!imageError ? (
+              <Image
+                src="/profile-image.png"
+                alt={`${contact.name}`}
+                width={400}
+                height={500}
+                className="about-profile-image"
+                onError={() => setImageError(true)}
+                priority
+              />
+            ) : (
+              <div className="about-image-placeholder">
+                <div className="placeholder-text">
                   {contact.name.split(" ").map((n) => n[0]).join("")}
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -126,55 +115,6 @@ export default function About() {
                 <li key={idx}>{achievement}</li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="about-testimonials">
-        <div className="section-header-centered">
-          <h2 className="section-title">Client Testimonials</h2>
-          <p className="section-subtitle">What people say about working with me</p>
-        </div>
-        <div className="testimonial-wrapper">
-          <div className="testimonial-card">
-            <div className="quote-mark">❝</div>
-            <p className="testimonial-quote">{testimonials[activeTestimonial].quote}</p>
-            <div className="testimonial-author">
-              <div className="author-avatar">
-                {testimonials[activeTestimonial].avatar}
-              </div>
-              <div className="author-info">
-                <div className="author-name">{testimonials[activeTestimonial].author}</div>
-                <div className="author-role">{testimonials[activeTestimonial].role}</div>
-              </div>
-            </div>
-          </div>
-          <div className="testimonial-controls">
-            <button
-              className="testimonial-nav"
-              onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-              aria-label="Previous testimonial"
-            >
-              ←
-            </button>
-            <div className="testimonial-dots">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`testimonial-dot ${idx === activeTestimonial ? 'active' : ''}`}
-                  onClick={() => setActiveTestimonial(idx)}
-                  aria-label={`Go to testimonial ${idx + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              className="testimonial-nav"
-              onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-              aria-label="Next testimonial"
-            >
-              →
-            </button>
           </div>
         </div>
       </section>

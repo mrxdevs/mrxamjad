@@ -54,13 +54,15 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hero-actions-new">
-            <Link href="/projects" className="hero-btn-primary-new">
-              Portfolio ↗
-            </Link>
-            <Link href="/contact" className="hero-btn-secondary-new">
-              Hire me
-            </Link>
+          <div className="hero-actions-container">
+            <div className="hero-actions-new">
+              <Link href="/projects" className="hero-btn-primary-new">
+                Portfolio ↗
+              </Link>
+              <Link href="/contact" className="hero-btn-secondary-new">
+                Hire me
+              </Link>
+            </div>
           </div>
         </div>
 

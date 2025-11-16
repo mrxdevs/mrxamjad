@@ -3,8 +3,10 @@ export const contact = {
   phone: "+91 7260004480",
   email: "mrxamjad@gmail.com",
   links: {
-    github: "https://github.com/mrxamjad",
+    github: "https://github.com/mrxdevs",
     linkedin: "https://www.linkedin.com/in/mrxamjad",
+    instagram: "https://instagram.com/mrxamjad",
+    x: "https://x.com/MrxAmjad",
     medium: "https://medium.com/@mrxamjad",
     code360: "https://www.codingninjas.com/codestudio/profile/mrxamjad",
     tufplus: "#",

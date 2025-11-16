@@ -7,9 +7,11 @@ export default function Projects() {
   return (
     <div className="py-16 relative">
       <h2 className="text-3xl font-bold">Projects</h2>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-8 flex flex-wrap gap-6 justify-center">
         {projects.map((p) => (
-          <ProjectCard key={p.title} project={p} />
+          <div key={p.title} className="w-full md:w-[calc(33.333%-1rem)] max-w-md">
+            <ProjectCard project={p} />
+          </div>
         ))}
       </div>
     </div>

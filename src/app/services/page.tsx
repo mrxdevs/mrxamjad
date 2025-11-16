@@ -1,18 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 export default function ServicesPage() {
-    const [activeService, setActiveService] = useState(0);
-
     const services = [
         {
             title: "Mobile Development",
-            description: "Native and cross-platform mobile applications with Flutter, Kotlin, and Swift. Delivering high-performance apps with seamless user experiences.",
+            description: "Native and cross-platform mobile applications built with Flutter, Kotlin, and Swift for exceptional performance and user experience.",
             features: [
                 "iOS & Android Development",
-                "Cross-platform with Flutter",
+                "Cross-platform Solutions",
                 "Native Performance",
                 "App Store Deployment",
             ],
@@ -20,7 +17,7 @@ export default function ServicesPage() {
         },
         {
             title: "UI/UX Design",
-            description: "Beautiful, intuitive interfaces that users love. From wireframes to high-fidelity prototypes, creating designs that convert.",
+            description: "Intuitive interfaces and seamless user experiences that drive engagement and conversions.",
             features: [
                 "User Research & Testing",
                 "Wireframing & Prototyping",
@@ -31,7 +28,7 @@ export default function ServicesPage() {
         },
         {
             title: "Web Development",
-            description: "Modern, responsive websites and web applications. Built with the latest technologies for optimal performance and SEO.",
+            description: "Modern, responsive websites and web applications optimized for performance and search engines.",
             features: [
                 "React & Next.js",
                 "Responsive Design",
@@ -42,10 +39,10 @@ export default function ServicesPage() {
         },
         {
             title: "Backend & APIs",
-            description: "Scalable backend solutions and RESTful APIs. Secure, efficient, and built to handle growth.",
+            description: "Scalable backend solutions and APIs designed for reliability, security, and growth.",
             features: [
                 "REST & GraphQL APIs",
-                "Database Design",
+                "Database Architecture",
                 "Cloud Infrastructure",
                 "Real-time Features",
             ],
@@ -53,113 +50,88 @@ export default function ServicesPage() {
         },
     ];
 
+    const process = [
+        {
+            number: "01",
+            title: "Discovery",
+            description: "Understanding your goals and requirements through detailed consultation.",
+        },
+        {
+            number: "02",
+            title: "Design",
+            description: "Creating prototypes and designs that align with your vision.",
+        },
+        {
+            number: "03",
+            title: "Development",
+            description: "Building robust solutions with clean code and best practices.",
+        },
+        {
+            number: "04",
+            title: "Delivery",
+            description: "Testing, deployment, and ongoing support for success.",
+        },
+    ];
+
     return (
-        <div className="services-page">
+        <div className="services-page-new">
             {/* Hero Section */}
-            <section className="services-hero">
-                <h1 className="services-title">
-                    My <span className="gradient">Services</span>
+            <section className="services-hero-new">
+                <h1 className="services-title-new">
+                    Services <span className="gradient">I Offer</span>
                 </h1>
-                <p className="services-subtitle">
-                    Comprehensive digital solutions tailored to your needs. From concept to deployment,
-                    I deliver high-quality work that exceeds expectations.
+                <p className="services-subtitle-new">
+                    End-to-end digital solutions from concept to deployment
                 </p>
             </section>
 
             {/* Services Grid */}
-            <section className="services-grid-section">
-                <div className="services-grid">
-                    {services.map((service, index) => (
-                        <div
-                            key={service.title}
-                            className={`service-card ${activeService === index ? "active" : ""}`}
-                            onMouseEnter={() => setActiveService(index)}
-                        >
-                            <div className="service-card-inner">
-                                <div className="service-icon">{service.icon}</div>
-                                <h3 className="service-title">{service.title}</h3>
-                                <p className="service-description">{service.description}</p>
-
-                                <ul className="service-features">
-                                    {service.features.map((feature) => (
-                                        <li key={feature}>
-                                            <span className="feature-bullet">✓</span>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <div className="service-arrow">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
-                            </div>
+            <section className="services-grid-section-new">
+                <div className="services-grid-new">
+                    {services.map((service) => (
+                        <div key={service.title} className="service-card-new">
+                            <div className="service-icon-new">{service.icon}</div>
+                            <h3 className="service-title-new">{service.title}</h3>
+                            <p className="service-description-new">{service.description}</p>
+                            <ul className="service-features-new">
+                                {service.features.map((feature) => (
+                                    <li key={feature}>{feature}</li>
+                                ))}
+                            </ul>
                         </div>
-                    ))}
-                </div>
-
-                {/* Carousel Dots */}
-                <div className="services-dots">
-                    {services.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`service-dot ${activeService === index ? "active" : ""}`}
-                            onClick={() => setActiveService(index)}
-                            aria-label={`View service ${index + 1}`}
-                        />
                     ))}
                 </div>
             </section>
 
             {/* Process Section */}
-            <section className="services-process">
-                <h2 className="process-title">How I Work</h2>
-                <div className="process-steps">
-                    <div className="process-step">
-                        <div className="step-number">01</div>
-                        <h3 className="step-title">Discovery</h3>
-                        <p className="step-description">
-                            Understanding your goals, target audience, and project requirements through detailed consultation.
-                        </p>
-                    </div>
-                    <div className="process-step">
-                        <div className="step-number">02</div>
-                        <h3 className="step-title">Design</h3>
-                        <p className="step-description">
-                            Creating wireframes, prototypes, and visual designs that align with your brand and user needs.
-                        </p>
-                    </div>
-                    <div className="process-step">
-                        <div className="step-number">03</div>
-                        <h3 className="step-title">Development</h3>
-                        <p className="step-description">
-                            Building robust, scalable solutions with clean code and best practices for optimal performance.
-                        </p>
-                    </div>
-                    <div className="process-step">
-                        <div className="step-number">04</div>
-                        <h3 className="step-title">Delivery</h3>
-                        <p className="step-description">
-                            Testing, deployment, and ongoing support to ensure your project's success and growth.
-                        </p>
-                    </div>
+            <section className="services-process-new">
+                <h2 className="process-title-new">My Process</h2>
+                <div className="process-grid-new">
+                    {process.map((step) => (
+                        <div key={step.number} className="process-step-new">
+                            <div className="step-number-new">{step.number}</div>
+                            <h3 className="step-title-new">{step.title}</h3>
+                            <p className="step-description-new">{step.description}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="services-cta">
-                <h2 className="cta-title">Ready to Start Your Project?</h2>
-                <p className="cta-subtitle">
-                    Let's discuss how I can help bring your ideas to life with cutting-edge technology and design.
-                </p>
-                <div className="cta-buttons">
-                    <Link href="/contact" className="cta-button-primary">
-                        Get In Touch →
-                    </Link>
-                    <Link href="/projects" className="cta-button-secondary">
-                        View Portfolio
-                    </Link>
+            <section className="services-cta-new">
+                <div className="cta-content-new">
+                    <h2 className="cta-title-new">Let's Build Something Great</h2>
+                    <p className="cta-subtitle-new">
+                        Ready to bring your project to life? Let's discuss your ideas.
+                    </p>
+                    <div className="cta-buttons-new">
+                        <Link href="/contact" className="cta-button-primary-new">
+                            Start a Project
+                        </Link>
+                        <Link href="/projects" className="cta-button-secondary-new">
+                            View Work
+                        </Link>
+                    </div>
                 </div>
             </section>
         </div>

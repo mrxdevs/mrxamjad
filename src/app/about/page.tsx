@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { contact, skills, certifications, achievements, education, languages } from "../../data/profile";
+import { contact, achievements, education } from "../../data/profile";
 
 export default function About() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = [
     {
-      quote: "Amjad is an exceptional talent. His attention to detail and creative vision transformed our project. He's not just a developer, he's a true partner who invests in the success of the product. Highly recommended!",
+      quote: "Amjad is an exceptional talent. His attention to detail and creative vision transformed our project. He's not just a developer, he's a true partner who invests in the success of the product.",
       author: "Sarah Johnson",
       role: "CEO @ TechCorp",
       avatar: "SJ"
     },
     {
-      quote: "Working with Amjad was a game-changer for our mobile app. His expertise in Flutter and native development helped us achieve 99.9% uptime and exceptional performance. A true professional!",
+      quote: "Working with Amjad was a game-changer for our mobile app. His expertise in Flutter and native development helped us achieve 99.9% uptime and exceptional performance.",
       author: "Michael Chen",
       role: "CTO @ StartupHub",
       avatar: "MC"
@@ -51,6 +51,26 @@ export default function About() {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-content">
+          <div className="about-text-content">
+            <h1 className="about-title">
+              About <span className="gradient">Me</span>
+            </h1>
+            <div className="about-description">
+              <p>
+                Hello! I'm <strong>{contact.name}</strong>, a passionate Mobile Developer and UI/UX Designer
+                with a knack for creating intuitive, beautiful, and high-performing digital experiences.
+              </p>
+              <p>
+                With over 2 years in the field, I thrive on turning complex problems into elegant,
+                user-centric solutions. My approach combines technical expertise with design thinking
+                to deliver products that users love.
+              </p>
+              <p>
+                When I'm not coding or designing, you can find me exploring new technologies,
+                contributing to open-source projects, or enjoying the great outdoors.
+              </p>
+            </div>
+          </div>
           <div className="about-avatar-container">
             <div className="about-avatar">
               <div className="avatar-gradient-ring"></div>
@@ -61,33 +81,15 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="about-hero-text">
-            <h1 className="about-title">
-              A little bit<br />
-              <span className="gradient">about myself</span>
-            </h1>
-            <div className="about-description">
-              <p>
-                Hello! I'm {contact.name}, a passionate <strong>Mobile Developer</strong> and <strong>UI/UX Designer</strong> with a
-                track for creating intuitive, beautiful, and high-performing digital experiences.
-                With over 2 years in the field, I thrive on turning complex problems into elegant,
-                user-centric solutions.
-              </p>
-              <p>
-                When I'm not coding or designing, you can find me exploring new technologies,
-                contributing to open-source projects, or hiking in the great outdoors.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section className="about-skills">
-        <div className="section-header">
-          <h2 className="section-title">My Skillset</h2>
+        <div className="section-header-centered">
+          <h2 className="section-title">Technical Expertise</h2>
           <p className="section-subtitle">
-            Hover over a skill to see my proficiency. I'm always learning and expanding my toolkit.
+            A comprehensive toolkit built through years of hands-on experience
           </p>
         </div>
         <div className="skills-grid">
@@ -105,25 +107,39 @@ export default function About() {
         </div>
       </section>
 
+      {/* Education & Achievements Combined */}
+      <section className="about-credentials">
+        <div className="credentials-container">
+          <div className="credential-card">
+            <div className="credential-icon">🎓</div>
+            <h3 className="credential-title">Education</h3>
+            <p className="credential-institute">{education.institute}</p>
+            <p className="credential-degree">{education.degree}</p>
+            <p className="credential-period">{education.period}</p>
+            <p className="credential-cgpa">CGPA: {education.cgpa}</p>
+          </div>
+          <div className="credential-card">
+            <div className="credential-icon">🏆</div>
+            <h3 className="credential-title">Achievements</h3>
+            <ul className="credential-list">
+              {achievements.map((achievement, idx) => (
+                <li key={idx}>{achievement}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="about-testimonials">
-        <div className="section-header">
-          <h2 className="section-title">What Clients Say</h2>
-          <p className="section-subtitle">Kind words from people I've worked with.</p>
+        <div className="section-header-centered">
+          <h2 className="section-title">Client Testimonials</h2>
+          <p className="section-subtitle">What people say about working with me</p>
         </div>
-        <div className="testimonial-container">
-          <button
-            className="testimonial-nav testimonial-prev"
-            onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            aria-label="Previous testimonial"
-          >
-            ‹
-          </button>
-
+        <div className="testimonial-wrapper">
           <div className="testimonial-card">
-            <div className="quote-icon quote-left">❝</div>
+            <div className="quote-mark">❝</div>
             <p className="testimonial-quote">{testimonials[activeTestimonial].quote}</p>
-            <div className="quote-icon quote-right">❞</div>
             <div className="testimonial-author">
               <div className="author-avatar">
                 {testimonials[activeTestimonial].avatar}
@@ -134,61 +150,51 @@ export default function About() {
               </div>
             </div>
           </div>
-
-          <button
-            className="testimonial-nav testimonial-next"
-            onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-            aria-label="Next testimonial"
-          >
-            ›
-          </button>
-        </div>
-        <div className="testimonial-dots">
-          {testimonials.map((_, idx) => (
+          <div className="testimonial-controls">
             <button
-              key={idx}
-              className={`testimonial-dot ${idx === activeTestimonial ? 'active' : ''}`}
-              onClick={() => setActiveTestimonial(idx)}
-              aria-label={`Go to testimonial ${idx + 1}`}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Education & Certifications */}
-      <section className="about-credentials">
-        <div className="credentials-grid">
-          <div className="credential-card">
-            <h3 className="credential-title">🎓 Education</h3>
-            <p className="credential-institute">{education.institute}</p>
-            <p className="credential-degree">{education.degree}</p>
-            <p className="credential-period">{education.period} | CGPA: {education.cgpa}</p>
-          </div>
-          <div className="credential-card">
-            <h3 className="credential-title">🏆 Achievements</h3>
-            <ul className="credential-list">
-              {achievements.map((achievement) => (
-                <li key={achievement}>{achievement}</li>
+              className="testimonial-nav"
+              onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              aria-label="Previous testimonial"
+            >
+              ←
+            </button>
+            <div className="testimonial-dots">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`testimonial-dot ${idx === activeTestimonial ? 'active' : ''}`}
+                  onClick={() => setActiveTestimonial(idx)}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
               ))}
-            </ul>
+            </div>
+            <button
+              className="testimonial-nav"
+              onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
+              aria-label="Next testimonial"
+            >
+              →
+            </button>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="about-cta">
-        <h2 className="cta-title">Let's Create Together</h2>
-        <p className="cta-subtitle">
-          Have a project in mind? Let's chat! I'm always open to discussing new projects,
-          creative ideas, or opportunities to be part of your vision.
-        </p>
-        <div className="cta-buttons">
-          <Link href="/contact" className="cta-button-primary">
-            Get In Touch →
-          </Link>
-          <Link href="/projects" className="cta-button-secondary">
-            View My Work
-          </Link>
+        <div className="cta-content">
+          <h2 className="cta-title">Let's Work Together</h2>
+          <p className="cta-subtitle">
+            Have a project in mind? I'm always open to discussing new opportunities
+            and creative collaborations.
+          </p>
+          <div className="cta-buttons">
+            <Link href="/contact" className="cta-button-primary">
+              Get In Touch
+            </Link>
+            <Link href="/projects" className="cta-button-secondary">
+              View Projects
+            </Link>
+          </div>
         </div>
       </section>
     </div>

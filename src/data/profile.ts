@@ -58,6 +58,7 @@ export const projects = [
       "Raptee Map, IoT, Push Notifications, in-app chat.",
     ],
     links: { playstore: "#", appstore: "#", caseStudy: "#" } as Record<string, string>,
+    image: "/raptee-profile.jpg",
     featured: true,
   },
   {
@@ -69,6 +70,7 @@ export const projects = [
       "Instant alerts via Firebase push notifications.",
     ],
     links: { playstore: "#", appstore: "#", caseStudy: "#" } as Record<string, string>,
+    image: "/ntelcare-profile.jpg",
     featured: true,
   },
   {
@@ -80,6 +82,7 @@ export const projects = [
       "10K+ active users, 4.6 Play Store rating.",
     ],
     links: { site: "#", caseStudy: "#" } as Record<string, string>,
+    image: "/digiwellie-profile.png",
     featured: true,
   },
   {
@@ -90,6 +93,7 @@ export const projects = [
       "Stripe integration for PCI-compliant transactions.",
     ],
     links: { site: "#", playstore: "#", caseStudy: "#" } as Record<string, string>,
+    image: "/baatu-profile.jpg",
     featured: true,
   },
 ];

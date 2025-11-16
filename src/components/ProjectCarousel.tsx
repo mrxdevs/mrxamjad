@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { projects as data } from "../data/profile";
 
 export default function ProjectCarousel() {
@@ -71,6 +72,15 @@ export default function ProjectCarousel() {
                 }}
               >
                 <div className="card-bg" />
+                <div className="card-image-container">
+                  <Image
+                    src={project.image || "/digiwellie-profile.png"}
+                    alt={project.title}
+                    width={450}
+                    height={300}
+                    className="card-project-image"
+                  />
+                </div>
                 <div className="card-content">
                   <div className="label">Featured Project</div>
                   <h3 className="title">{project.title}</h3>

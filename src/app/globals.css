@@ -5881,3 +5881,155 @@ estimonials Section - New Design */
     text-align: center;
   }
 }
+
+
+/* ===================================
+   TESTIMONIALS INFINITE SCROLL
+   =================================== */
+
+.testimonials-section-scroll {
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.testimonials-header-scroll {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.testimonials-title-scroll {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.testimonials-subtitle-scroll {
+  font-size: 1.1rem;
+  color: rgba(229, 231, 235, 0.7);
+  line-height: 1.6;
+}
+
+/* Scroll Container */
+.testimonials-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonials-scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.testimonials-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Testimonial Card */
+.testimonial-card-scroll {
+  flex: 0 0 400px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card-scroll:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(168, 85, 247, 0.15);
+}
+
+.testimonial-quote-icon-scroll {
+  font-size: 2.5rem;
+  color: rgba(168, 85, 247, 0.4);
+  line-height: 1;
+}
+
+.testimonial-author-info-scroll {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-avatar-scroll {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.testimonial-avatar-scroll img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-author-details-scroll {
+  flex: 1;
+}
+
+.testimonial-author-name-scroll {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author-role-scroll {
+  font-size: 0.9rem;
+  color: rgba(229, 231, 235, 0.6);
+}
+
+.testimonial-rating-scroll {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star-filled-scroll {
+  font-size: 1rem;
+}
+
+.testimonial-text-scroll {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(229, 231, 235, 0.85);
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials-title-scroll {
+    font-size: 2rem;
+  }
+
+  .testimonial-card-scroll {
+    flex: 0 0 320px;
+    padding: 1.5rem;
+  }
+
+  .testimonials-scroll-track {
+    animation: scroll 30s linear infinite;
+  }
+}

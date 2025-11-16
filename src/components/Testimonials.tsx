@@ -1,89 +1,122 @@
 "use client";
 
-import { useState } from "react";
-
 export default function Testimonials() {
-    const [activeTestimonial, setActiveTestimonial] = useState(0);
-
     const testimonials = [
         {
-            quote: "Working with this developer was an absolute pleasure. They delivered a stunning, responsive website that exceeded our expectations. The attention to detail and commitment to quality was evident throughout the entire project.",
-            author: "Sarah Mitchell",
-            role: "Marketing Director",
-            avatar: "SM",
+            quote: "Impressed by their creative vision and technical prowess. They delivered a powerful digital solution that has revolutionized our business operations and customer experience.",
+            author: "Navneet Shukla",
+            role: "Manager @ Goldie Masale",
+            avatar: "NS",
             rating: 5.0,
         },
         {
-            quote: "Exceptional technical skills combined with great communication. The project was completed on time and within budget. I particularly appreciated the proactive approach to solving challenges and the clean, maintainable code delivered.",
-            author: "James Chen",
-            role: "Product Manager",
-            avatar: "JC",
+            quote: "Outstanding digital expertise combined with exceptional project management. Their solution elevated our brand presence while streamlining our operations. Truly a game-changing partnership.",
+            author: "Abhinav Singh",
+            role: "Team Lead @ Impression",
+            avatar: "AS",
             rating: 5.0,
         },
         {
-            quote: "Outstanding work on our e-commerce platform. The developer understood our business needs perfectly and translated them into a seamless user experience. Highly recommend for any web development project.",
-            author: "Emily Rodriguez",
-            role: "CEO, TechStart Inc",
-            avatar: "ER",
+            quote: "Remarkable technical innovation and flawless execution. Their development expertise created a robust platform that exceeded our expectations in both performance and scalability.",
+            author: "Rechit",
+            role: "Software Engineer",
+            avatar: "R",
+            rating: 5.0,
+        },
+        {
+            quote: "Exceptional digital solutions that transformed our online presence. Their innovative approach and strategic thinking delivered results beyond expectations. A truly outstanding partner for any business looking to excel digitally.",
+            author: "Sunny Yadav",
+            role: "Director @ MegaMind",
+            avatar: "SY",
+            rating: 5.0,
+        },
+        {
+            quote: "Brilliantly executed web design that perfectly captures our brand essence. The seamless functionality and stunning visuals have significantly boosted our online engagement and customer satisfaction.",
+            author: "Saddam Hussain",
+            role: "Director @ Cake Choices",
+            avatar: "SH",
             rating: 5.0,
         },
     ];
 
-    const nextTestimonial = () => {
-        setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    };
-
-    const prevTestimonial = () => {
-        setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    };
-
     return (
-        <div className="testimonials-section-new">
+        <div className="testimonials-section-scroll">
             {/* Header */}
-            <div className="testimonials-header-new">
-                <h2 className="testimonials-title-new">
+            <div className="testimonials-header-scroll">
+                <h2 className="testimonials-title-scroll">
                     Testimonials That<br />
                     Speak to <span className="gradient">My Results</span>
                 </h2>
-                <p className="testimonials-subtitle-new">
+                <p className="testimonials-subtitle-scroll">
                     Discover what clients say about working with me. These testimonials reflect
-                    the quality, dedication, and results I deliver in every project. From concept
-                    to completion, I strive to exceed expectations and create lasting partnerships.
+                    the quality, dedication, and results I deliver in every project.
                 </p>
             </div>
 
-            {/* Testimonials Grid */}
-            <div className="testimonials-grid-new">
-                {testimonials.map((testimonial, index) => (
-                    <div
-                        key={index}
-                        className="testimonial-card-new"
-                    >
-                        <div className="testimonial-quote-icon-new">❝</div>
+            {/* Infinite Scroll Container */}
+            <div className="testimonials-scroll-container">
+                <div className="testimonials-scroll-track">
+                    {/* First set of testimonials */}
+                    {testimonials.map((testimonial, index) => (
+                        <div
+                            key={`first-${index}`}
+                            className="testimonial-card-scroll"
+                        >
+                            <div className="testimonial-quote-icon-scroll">❝</div>
 
-                        <div className="testimonial-author-info-new">
-                            <div className="testimonial-avatar-new">
-                                <img
-                                    src={`https://ui-avatars.com/api/?name=${testimonial.author}&background=a855f7&color=fff&size=48`}
-                                    alt={testimonial.author}
-                                />
+                            <div className="testimonial-author-info-scroll">
+                                <div className="testimonial-avatar-scroll">
+                                    <img
+                                        src={`https://ui-avatars.com/api/?name=${testimonial.author}&background=a855f7&color=fff&size=48`}
+                                        alt={testimonial.author}
+                                    />
+                                </div>
+                                <div className="testimonial-author-details-scroll">
+                                    <h4 className="testimonial-author-name-scroll">{testimonial.author}</h4>
+                                    <p className="testimonial-author-role-scroll">{testimonial.role}</p>
+                                </div>
                             </div>
-                            <div className="testimonial-author-details-new">
-                                <h4 className="testimonial-author-name-new">{testimonial.author}</h4>
-                                <p className="testimonial-author-role-new">{testimonial.role}</p>
+
+                            <div className="testimonial-rating-scroll">
+                                {[...Array(5)].map((_, i) => (
+                                    <span key={i} className="star-filled-scroll">⭐</span>
+                                ))}
                             </div>
-                        </div>
 
-                        <div className="testimonial-rating-new">
-                            {[...Array(5)].map((_, i) => (
-                                <span key={i} className="star-filled">⭐</span>
-                            ))}
-                            <span className="rating-number">{testimonial.rating}</span>
+                            <p className="testimonial-text-scroll">{testimonial.quote}</p>
                         </div>
+                    ))}
+                    {/* Duplicate set for seamless loop */}
+                    {testimonials.map((testimonial, index) => (
+                        <div
+                            key={`second-${index}`}
+                            className="testimonial-card-scroll"
+                        >
+                            <div className="testimonial-quote-icon-scroll">❝</div>
 
-                        <p className="testimonial-text-new">{testimonial.quote}</p>
-                    </div>
-                ))}
+                            <div className="testimonial-author-info-scroll">
+                                <div className="testimonial-avatar-scroll">
+                                    <img
+                                        src={`https://ui-avatars.com/api/?name=${testimonial.author}&background=a855f7&color=fff&size=48`}
+                                        alt={testimonial.author}
+                                    />
+                                </div>
+                                <div className="testimonial-author-details-scroll">
+                                    <h4 className="testimonial-author-name-scroll">{testimonial.author}</h4>
+                                    <p className="testimonial-author-role-scroll">{testimonial.role}</p>
+                                </div>
+                            </div>
+
+                            <div className="testimonial-rating-scroll">
+                                {[...Array(5)].map((_, i) => (
+                                    <span key={i} className="star-filled-scroll">⭐</span>
+                                ))}
+                            </div>
+
+                            <p className="testimonial-text-scroll">{testimonial.quote}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

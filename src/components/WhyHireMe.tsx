@@ -27,7 +27,7 @@ export default function WhyHireMe() {
                     <div >
                         {!imageError ? (
                             <Image
-                                src="/women_profile.png"
+                                src="/profile-image.png"
                                 alt={`${contact.name} - Mobile Developer`}
                                 width={570}
                                 height={570}

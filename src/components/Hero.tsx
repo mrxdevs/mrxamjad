@@ -36,7 +36,7 @@ export default function Hero() {
             <div >
               {!imageError ? (
                 <Image
-                  src="/women_profile.png"
+                  src="/profile-image.png"
                   alt={`${contact.name} - Mobile Developer`}
                   width={680}
                   height={680}

@@ -9,6 +9,17 @@ export default function ProjectCarousel() {
   const items = data;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const prev = () => {
     if (!isAnimating) {
@@ -53,22 +64,25 @@ export default function ProjectCarousel() {
             const isActive = index === activeIndex;
 
             // Calculate position based on offset
-            // Center card (offset 0): 0px
-            // Left card (offset -1): -500px
-            // Right card (offset 1): 500px
-            const baseCardWidth = 450;
-            const gap = 50;
-            const translateX = offset * (baseCardWidth + gap);
+            // Center card: 480px wide (±240px from center)
+            // Side cards: 420px * 0.88 = 370px wide
+            // Need gap of at least 20px between cards
+            // Position: ±(240 + 20 + 185) = ±445px
+            const sideCardPosition = 460;
+            const translateX = offset * sideCardPosition;
 
             return (
               <div
                 key={project.title}
                 className={`carousel-card ${isActive ? "active" : ""}`}
                 style={{
-                  transform: `translateX(${translateX}px) scale(${isActive ? 1 : 0.88})`,
-                  opacity: Math.abs(offset) > 1 ? 0 : isActive ? 1 : 0.6,
+                  transform: isMobile
+                    ? `translateX(-50%) scale(${isActive ? 1 : 0.88})`
+                    : `translateX(${translateX}px) scale(${isActive ? 1 : 0.8})`,
+                  opacity: Math.abs(offset) > 1 ? 0 : isActive ? 1 : 0.5,
                   zIndex: isActive ? 10 : 5 - Math.abs(offset),
                   pointerEvents: Math.abs(offset) > 1 ? 'none' : 'auto',
+                  display: isMobile && !isActive ? 'none' : 'block',
                 }}
               >
                 <div className="card-bg" />

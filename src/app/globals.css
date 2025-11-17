@@ -334,6 +334,8 @@ a:active {
   margin-top: 2rem;
   position: relative;
   padding: 2rem 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 .carousel-header {
@@ -368,11 +370,14 @@ a:active {
 
 .carousel-container {
   position: relative;
-  height: 550px;
-  overflow: visible;
+  height: 650px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 4rem;
 }
 
 .carousel-track {
@@ -805,19 +810,51 @@ a:active {
   }
 
   .carousel-container {
-    height: 450px;
+    height: 680px;
+    padding: 2rem 1rem;
+    overflow: visible;
   }
 
   .carousel-card {
-    width: 350px;
-    height: 400px;
-    margin-left: -175px;
+    width: 320px;
+    height: auto;
+    min-height: 580px;
+    max-height: 620px;
+    margin-left: -160px;
   }
 
   .carousel-card.active {
-    width: 400px;
-    height: 440px;
-    margin-left: -200px;
+    width: 340px;
+    height: auto;
+    min-height: 600px;
+    max-height: 640px;
+    margin-left: -170px;
+  }
+
+  .card-image-container {
+    height: 180px;
+    margin: 0.75rem 0.75rem 0 0.75rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  .card-content {
+    padding: 1rem 1.25rem 1.5rem;
+    overflow: visible;
+  }
+
+  .title {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+  }
+
+  .summary {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  .points {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
   }
 }
 
@@ -884,39 +921,89 @@ a:active {
   }
 
   .carousel-container {
-    height: 400px;
+    height: 650px;
+    padding: 1rem 0;
+    overflow: visible;
+  }
+
+  .carousel-track {
+    overflow: visible;
   }
 
   .carousel-card {
     width: 85%;
     max-width: 320px;
-    height: 380px;
+    height: auto;
+    min-height: 560px;
     left: 50%;
     margin-left: 0;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
   }
 
   .carousel-card.active {
     width: 90%;
     max-width: 350px;
-    height: 400px;
+    height: auto;
+    min-height: 580px;
     margin-left: 0;
+    transform: translateX(-50%) scale(1) !important;
+  }
+
+  .card-image-container {
+    height: 180px;
+    margin: 0.75rem 0.75rem 0 0.75rem;
+    width: calc(100% - 1.5rem);
   }
 
   .card-content {
-    padding: 1.5rem;
+    padding: 1rem 1.25rem 1.5rem;
+    overflow: visible;
+  }
+
+  .label {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.4rem;
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: 1.15rem !important;
+    line-height: 1.3;
+    margin-top: 0.25rem;
   }
 
   .carousel-card.active .title {
-    font-size: 1.5rem;
+    font-size: 1.35rem !important;
+  }
+
+  .summary {
+    font-size: 0.875rem !important;
+    line-height: 1.5;
+    margin-top: 0.5rem;
   }
 
   .points {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+
+  .points li {
+    margin-bottom: 0.35rem;
+  }
+
+  .links {
+    margin-top: 0.6rem;
+  }
+
+  .link-btn {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.6rem !important;
+  }
+
+  .cta {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.65rem;
   }
 
   .dot-btn {

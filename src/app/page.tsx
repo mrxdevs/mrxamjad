@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="pb-20">
       <Hero />
-      <section className="mx-auto mt-8 max-w-6xl">
+      <section className="mx-auto mt-8 max-w-7xl px-4">
         <ProjectCarousel />
       </section>
       <section className="mx-auto mt-16 max-w-6xl">

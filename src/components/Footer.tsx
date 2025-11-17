@@ -27,9 +27,12 @@ export default function Footer() {
         }
       );
 
+      console.log("Newsletter response status:", response.status);
       const data = await response.json();
+      console.log("Newsletter response data:", data);
 
-      if (response.ok) {
+      // Handle all success status codes (200, 201, etc.)
+      if (response.status === 200 || response.status === 201 || response.ok) {
         toast.success("Successfully subscribed to newsletter!", {
           duration: 4000,
           position: "bottom-right",

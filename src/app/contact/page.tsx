@@ -35,9 +35,12 @@ export default function ContactPage() {
                 }
             );
 
+            console.log("Response status:", response.status);
             const data = await response.json();
+            console.log("Response data:", data);
 
-            if (response.ok) {
+            // Handle all success status codes (200, 201, etc.)
+            if (response.status === 200 || response.status === 201 || response.ok) {
                 toast.success("Message sent successfully! I'll get back to you soon.", {
                     duration: 4000,
                     position: "top-center",

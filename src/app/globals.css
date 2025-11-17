@@ -41,6 +41,28 @@ body {
   color: transparent;
 }
 
+/* Typing Cursor Animation */
+.typing-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #a855f7;
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .hero-glow {
   position: absolute;
   inset: -10% -20% 0 -20%;

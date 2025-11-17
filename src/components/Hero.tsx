@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { contact } from "../data/profile";
@@ -8,6 +8,49 @@ import { contact } from "../data/profile";
 export default function Hero() {
   const yearsOfExperience = new Date().getFullYear() - 2023;
   const [imageError, setImageError] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const roles = [
+    "Mobile Developer",
+    "Android Developer",
+    "iOS Developer",
+    "Flutter Developer",
+    "React Developer",
+    "WatchOS Developer",
+    "Backend Developer",
+    "Software Engineer"
+  ];
+
+  useEffect(() => {
+    const currentRole = roles[currentRoleIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (typedText.length < currentRole.length) {
+          setTypedText(currentRole.substring(0, typedText.length + 1));
+        } else {
+          // Finished typing, wait then start deleting
+          setTimeout(() => setIsDeleting(true), pauseTime);
+        }
+      } else {
+        // Deleting
+        if (typedText.length > 0) {
+          setTypedText(currentRole.substring(0, typedText.length - 1));
+        } else {
+          // Finished deleting, move to next role
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [typedText, isDeleting, currentRoleIndex]);
 
   return (
     <section className="hero-section-new">
@@ -29,7 +72,10 @@ export default function Hero() {
 
           <h1 className="hero-title-new">
             I'm <span className="gradient">{contact.name.split(" ")[0]}</span>,<br />
-            <span className="hero-subtitle-new">Mobile Developer</span>
+            <span className="hero-subtitle-new">
+              {typedText}
+              <span className="typing-cursor">|</span>
+            </span>
           </h1>
 
           {/* Circular Background with Person Image */}

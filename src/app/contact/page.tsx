@@ -6,6 +6,7 @@ export default function ContactPage() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        phone: "",
         subject: "",
         message: "",
     });
@@ -62,16 +63,28 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            required
-                            className="form-input"
-                        />
+                    <div className="form-row">
+                        <div className="form-group">
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="Phone Number"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="Subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                required
+                                className="form-input"
+                            />
+                        </div>
                     </div>
 
                     <div className="form-group">

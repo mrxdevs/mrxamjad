@@ -2,19 +2,78 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
 import { contact } from "../data/profile";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Subscribe:", email);
-    setEmail("");
+    setIsSubscribing(true);
+
+    try {
+      const response = await fetch(
+        "https://appsail-50035953162.development.catalystappsail.in/newsletter/subscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Successfully subscribed to newsletter!", {
+          duration: 4000,
+          position: "bottom-right",
+          style: {
+            background: "#10b981",
+            color: "#fff",
+            padding: "16px",
+            borderRadius: "8px",
+          },
+        });
+        setEmail("");
+      } else {
+        const errorMessage = data.error || data.message || "Failed to subscribe. Please try again.";
+        toast.error(errorMessage, {
+          duration: 4000,
+          position: "bottom-right",
+          style: {
+            background: "#ef4444",
+            color: "#fff",
+            padding: "16px",
+            borderRadius: "8px",
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Newsletter subscription error:", error);
+      toast.error("Failed to subscribe. Please check your connection.", {
+        duration: 4000,
+        position: "bottom-right",
+        style: {
+          background: "#ef4444",
+          color: "#fff",
+          padding: "16px",
+          borderRadius: "8px",
+        },
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
   };
 
   return (
     <footer className="footer-section">
+      <Toaster />
       <div className="footer-cta">
         <h2 className="footer-cta-title">Let's Connect there</h2>
         <Link href="/contact" className="footer-hire-btn">
@@ -104,8 +163,8 @@ export default function Footer() {
                 required
                 className="newsletter-input"
               />
-              <button type="submit" className="newsletter-submit" aria-label="Subscribe">
-                →
+              <button type="submit" className="newsletter-submit" aria-label="Subscribe" disabled={isSubscribing}>
+                {isSubscribing ? "..." : "→"}
               </button>
             </form>
           </div>

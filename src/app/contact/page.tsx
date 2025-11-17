@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -10,11 +11,79 @@ export default function ContactPage() {
         subject: "",
         message: "",
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        // Add your form submission logic here
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch(
+                "https://appsail-50035953162.development.catalystappsail.in/contact/submit",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        subject: formData.subject,
+                        description: formData.message,
+                        phone: formData.phone,
+                    }),
+                }
+            );
+
+            const data = await response.json();
+
+            if (response.ok) {
+                toast.success("Message sent successfully! I'll get back to you soon.", {
+                    duration: 4000,
+                    position: "top-center",
+                    style: {
+                        background: "#10b981",
+                        color: "#fff",
+                        padding: "16px",
+                        borderRadius: "8px",
+                    },
+                });
+                // Reset form
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    subject: "",
+                    message: "",
+                });
+            } else {
+                const errorMessage = data.error || data.message || "Something went wrong. Please try again.";
+                toast.error(errorMessage, {
+                    duration: 4000,
+                    position: "top-center",
+                    style: {
+                        background: "#ef4444",
+                        color: "#fff",
+                        padding: "16px",
+                        borderRadius: "8px",
+                    },
+                });
+            }
+        } catch (error) {
+            console.error("Contact form error:", error);
+            toast.error("Failed to send message. Please check your connection.", {
+                duration: 4000,
+                position: "top-center",
+                style: {
+                    background: "#ef4444",
+                    color: "#fff",
+                    padding: "16px",
+                    borderRadius: "8px",
+                },
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,6 +95,7 @@ export default function ContactPage() {
 
     return (
         <div className="contact-page">
+            <Toaster />
             <div className="contact-hero">
                 <h1 className="contact-title">
                     Let's Create<br />
@@ -99,8 +169,8 @@ export default function ContactPage() {
                         />
                     </div>
 
-                    <button type="submit" className="form-submit">
-                        Send Message ▷
+                    <button type="submit" className="form-submit" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending..." : "Send Message ▷"}
                     </button>
                 </form>
             </div>

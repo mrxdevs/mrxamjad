@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { contact } from "../data/profile";
@@ -12,7 +12,7 @@ export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = [
+  const roles = useMemo(() => [
     "Mobile Developer",
     "Android Developer",
     "iOS Developer",
@@ -21,7 +21,7 @@ export default function Hero() {
     "WatchOS Developer",
     "Backend Developer",
     "Software Engineer"
-  ];
+  ], []);
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -50,7 +50,7 @@ export default function Hero() {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [typedText, isDeleting, currentRoleIndex]);
+  }, [typedText, isDeleting, currentRoleIndex, roles]);
 
   return (
     <section className="hero-section-new">

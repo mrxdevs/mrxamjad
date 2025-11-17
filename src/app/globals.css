@@ -6395,3 +6395,141 @@ estimonials Section - New Design */
     height: 100px;
   }
 }
+
+/* GitHub Activity Section */
+.github-activity-section {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header-centered {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.github-activity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.github-stats-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.github-stats-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.github-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(232, 121, 249, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e879f9;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.github-stats-card:hover .github-icon {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(232, 121, 249, 0.3));
+  transform: scale(1.1);
+}
+
+.github-username {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.username-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.view-profile {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.github-stats-card:hover .view-profile {
+  color: #e879f9;
+}
+
+.github-contribution-graph {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.contribution-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .github-activity-section {
+    padding: 3rem 0;
+  }
+
+  .github-stats-card {
+    padding: 1.5rem;
+  }
+
+  .github-link {
+    gap: 1rem;
+  }
+
+  .github-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .github-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .username-label {
+    font-size: 1.25rem;
+  }
+
+  .github-contribution-graph {
+    padding: 1rem;
+    overflow-x: scroll;
+  }
+
+  .contribution-image {
+    min-width: 600px;
+  }
+}

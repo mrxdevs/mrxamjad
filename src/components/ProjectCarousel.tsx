@@ -101,7 +101,7 @@ export default function ProjectCarousel() {
                   <p className="summary">{project.summary}</p>
                   <ul className="points">
                     {project.points.map((point, idx) => (
-                      <li key={idx}>•{point}</li>
+                      <li key={idx}>{point}</li>
                     ))}
                   </ul>
                   <div className="links">

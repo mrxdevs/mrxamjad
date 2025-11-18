@@ -6877,3 +6877,359 @@ estimonials Section - New Design */
     min-width: 600px;
   }
 }
+
+
+/* ===================================
+   GITHUB & LEETCODE ACTIVITY SECTIONS
+   =================================== */
+
+/* GitHub Activity Section */
+.github-activity-section {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.github-activity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.github-stats-card {
+  display: flex;
+  justify-content: center;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.15);
+}
+
+.github-icon {
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-username {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.username-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.view-profile {
+  font-size: 0.9rem;
+  color: rgba(168, 85, 247, 0.9);
+  font-weight: 500;
+}
+
+.github-contribution-graph {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.contribution-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* LeetCode Stats Section */
+.leetcode-stats-section {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leetcode-stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.leetcode-profile-card {
+  display: flex;
+  justify-content: center;
+}
+
+.leetcode-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.leetcode-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.15);
+}
+
+.leetcode-icon {
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leetcode-username {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.leetcode-stats-grid {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.leetcode-card-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .github-activity-section,
+  .leetcode-stats-section {
+    padding: 2rem 0;
+  }
+
+  .github-link,
+  .leetcode-link {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .username-label {
+    font-size: 1.1rem;
+  }
+
+  .github-contribution-graph,
+  .leetcode-stats-grid {
+    padding: 1rem;
+  }
+
+  .contribution-image,
+  .leetcode-card-image {
+    max-width: 100%;
+  }
+}
+
+
+/* Coding Ninjas Stats Section */
+.coding-ninjas-stats-section {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.coding-ninjas-stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.coding-ninjas-profile-card {
+  display: flex;
+  justify-content: center;
+}
+
+.coding-ninjas-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.coding-ninjas-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.15);
+}
+
+.coding-ninjas-icon {
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coding-ninjas-username {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.coding-ninjas-stats-grid {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.coding-ninjas-placeholder {
+  width: 100%;
+  max-width: 800px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.placeholder-icon-large {
+  color: rgba(168, 85, 247, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.placeholder-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(229, 231, 235, 0.7);
+  max-width: 500px;
+  margin: 0;
+}
+
+.placeholder-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(90deg, #a855f7, #e879f9);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.placeholder-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+.coding-ninjas-embed {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coding-ninjas-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+.coding-ninjas-heatmap-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coding-ninjas-stats-section {
+    padding: 2rem 0;
+  }
+
+  .coding-ninjas-link {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .coding-ninjas-stats-grid {
+    padding: 1rem;
+  }
+
+  .coding-ninjas-placeholder {
+    padding: 2rem 1rem;
+  }
+
+  .placeholder-title {
+    font-size: 1.5rem;
+  }
+
+  .placeholder-description {
+    font-size: 0.95rem;
+  }
+
+  .placeholder-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .coding-ninjas-embed {
+    height: 500px;
+  }
+
+  .coding-ninjas-heatmap-image {
+    max-width: 100%;
+  }
+}

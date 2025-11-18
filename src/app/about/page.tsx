@@ -147,6 +147,100 @@ export default function About() {
         </div>
       </section>
 
+      {/* LeetCode Stats Section */}
+      <section className="leetcode-stats-section">
+        <div className="section-header-centered">
+          <h2 className="section-title">LeetCode Activity</h2>
+          <p className="section-subtitle">
+            Problem-solving journey and competitive programming stats
+          </p>
+        </div>
+        <div className="leetcode-stats-container">
+          <div className="leetcode-profile-card">
+            <a
+              href="https://leetcode.com/mrxamjad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="leetcode-link"
+            >
+              <div className="leetcode-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                </svg>
+              </div>
+              <div className="leetcode-username">
+                <span className="username-label">@mrxamjad</span>
+                <span className="view-profile">View Profile →</span>
+              </div>
+            </a>
+          </div>
+          <div className="leetcode-stats-grid">
+            <img
+              src="https://leetcard.jacoblin.cool/mrxamjad?theme=dark&font=Ubuntu&ext=heatmap"
+              alt="LeetCode Stats"
+              className="leetcode-card-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Coding Ninjas Stats Section */}
+      <section className="coding-ninjas-stats-section">
+        <div className="section-header-centered">
+          <h2 className="section-title">Coding Ninjas Activity</h2>
+          <p className="section-subtitle">
+            Practice and learning journey on Coding Studio
+          </p>
+        </div>
+        <div className="coding-ninjas-stats-container">
+          <div className="coding-ninjas-profile-card">
+            <a
+              href="https://www.codingninjas.com/studio/profile/mrxamjad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="coding-ninjas-link"
+            >
+              <div className="coding-ninjas-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm-1-9h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+                </svg>
+              </div>
+              <div className="coding-ninjas-username">
+                <span className="username-label">@mrxamjad</span>
+                <span className="view-profile">View Profile →</span>
+              </div>
+            </a>
+          </div>
+          <div className="coding-ninjas-stats-grid">
+            <div className="coding-ninjas-placeholder">
+              <div className="placeholder-content">
+                <div className="placeholder-icon-large">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+                    <path d="M12 8v8M8 12h8" />
+                  </svg>
+                </div>
+                <h3 className="placeholder-title">Coding Ninjas Profile</h3>
+                <p className="placeholder-description">
+                  View my complete coding activity, problem-solving stats, and learning progress on Coding Ninjas Studio
+                </p>
+                <a
+                  href="https://www.naukri.com/code360/profile/mrxamjad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="placeholder-button"
+                >
+                  View Full Profile
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Education & Achievements Combined */}
       <section className="about-credentials">
         <div className="credentials-container">

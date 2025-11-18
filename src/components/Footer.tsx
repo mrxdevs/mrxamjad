@@ -14,18 +14,15 @@ export default function Footer() {
     setIsSubscribing(true);
 
     try {
-      const response = await fetch(
-        "https://appsail-50035953162.development.catalystappsail.in/newsletter/subscribe",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-          }),
-        }
-      );
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      });
 
       console.log("Newsletter response status:", response.status);
       const data = await response.json();

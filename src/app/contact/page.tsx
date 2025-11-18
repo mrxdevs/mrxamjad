@@ -18,22 +18,19 @@ export default function ContactPage() {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(
-                "https://appsail-50035953162.development.catalystappsail.in/contact/submit",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        name: formData.name,
-                        email: formData.email,
-                        subject: formData.subject,
-                        description: formData.message,
-                        phone: formData.phone,
-                    }),
-                }
-            );
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    description: formData.message,
+                    phone: formData.phone,
+                }),
+            });
 
             console.log("Response status:", response.status);
             const data = await response.json();

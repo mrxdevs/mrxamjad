@@ -7233,3 +7233,89 @@ estimonials Section - New Design */
     max-width: 100%;
   }
 }
+
+/* Tak
+eUForward Stats Section */
+.takeuforward-stats-section {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.takeuforward-stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.takeuforward-profile-card {
+  display: flex;
+  justify-content: center;
+}
+
+.takeuforward-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.takeuforward-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.15);
+}
+
+.takeuforward-icon {
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.takeuforward-username {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.takeuforward-stats-grid {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.takeuforward-placeholder {
+  width: 100%;
+  max-width: 800px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .takeuforward-stats-section {
+    padding: 2rem 0;
+  }
+
+  .takeuforward-link {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .takeuforward-stats-grid {
+    padding: 1rem;
+  }
+
+  .takeuforward-placeholder {
+    padding: 2rem 1rem;
+  }
+}

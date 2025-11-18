@@ -31,39 +31,57 @@ export default function Footer() {
       // Handle all success status codes (200, 201, etc.)
       if (response.status === 200 || response.status === 201 || response.ok) {
         toast.success("Successfully subscribed to newsletter!", {
-          duration: 4000,
-          position: "bottom-right",
+          duration: 5000,
+          position: "top-center",
+          icon: "🎉",
           style: {
-            background: "#10b981",
+            background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
             color: "#fff",
-            padding: "16px",
-            borderRadius: "8px",
+            padding: "18px 24px",
+            borderRadius: "16px",
+            fontSize: "15px",
+            fontWeight: "500",
+            boxShadow: "0 10px 40px rgba(16, 185, 129, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(10px)",
+            maxWidth: "400px",
           },
         });
         setEmail("");
       } else {
         const errorMessage = data.error || data.message || "Failed to subscribe. Please try again.";
         toast.error(errorMessage, {
-          duration: 4000,
-          position: "bottom-right",
+          duration: 5000,
+          position: "top-center",
+          icon: "⚠️",
           style: {
-            background: "#ef4444",
+            background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
             color: "#fff",
-            padding: "16px",
-            borderRadius: "8px",
+            padding: "18px 24px",
+            borderRadius: "16px",
+            fontSize: "15px",
+            fontWeight: "500",
+            boxShadow: "0 10px 40px rgba(239, 68, 68, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(10px)",
+            maxWidth: "400px",
           },
         });
       }
     } catch (error) {
       console.error("Newsletter subscription error:", error);
       toast.error("Failed to subscribe. Please check your connection.", {
-        duration: 4000,
-        position: "bottom-right",
+        duration: 5000,
+        position: "top-center",
+        icon: "🔌",
         style: {
-          background: "#ef4444",
+          background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
           color: "#fff",
-          padding: "16px",
-          borderRadius: "8px",
+          padding: "18px 24px",
+          borderRadius: "16px",
+          fontSize: "15px",
+          fontWeight: "500",
+          boxShadow: "0 10px 40px rgba(239, 68, 68, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          maxWidth: "400px",
         },
       });
     } finally {
@@ -73,7 +91,14 @@ export default function Footer() {
 
   return (
     <footer className="footer-section">
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            animation: "toast-enter 0.3s ease-out",
+          },
+        }}
+      />
       <div className="footer-cta">
         <h2 className="footer-cta-title">Let's Connect there</h2>
         <Link href="/contact" className="footer-hire-btn">

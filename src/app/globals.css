@@ -5819,12 +5819,23 @@ estimonials Section - New Design */
 
   .hero-actions-new {
     flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
   }
 
   .hero-btn-primary-new,
   .hero-btn-secondary-new {
     width: 100%;
     max-width: 300px;
+    padding: 0.75rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-btn-primary-new {
+    box-shadow: 0 2px 12px rgba(168, 85, 247, 0.3);
   }
 }
 
@@ -5845,6 +5856,19 @@ estimonials Section - New Design */
   .hero-circle-background {
     width: 280px;
     height: 280px;
+  }
+
+  .hero-actions-new {
+    padding: 0.4rem;
+    gap: 0.4rem;
+    border-radius: 18px;
+  }
+
+  .hero-btn-primary-new,
+  .hero-btn-secondary-new {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 14px;
   }
 
   .hero-person-image {

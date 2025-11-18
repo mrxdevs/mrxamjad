@@ -17,8 +17,8 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-sm">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-sm overflow-x-hidden">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8 w-full">
         <nav className="navbar-pill">
           <div className="navbar-content">
             {navLinks.map((link) => (

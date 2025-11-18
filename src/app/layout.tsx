@@ -31,10 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#14121f] text-zinc-200">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
+        <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#14121f] text-zinc-200 w-full overflow-x-hidden">
           <Navbar />
-          <main className="relative mx-auto max-w-6xl px-6 sm:px-8">
+          <main className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 w-full">
             <PageAnimator>{children}</PageAnimator>
           </main>
           <Footer />

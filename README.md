@@ -1,8 +1,6 @@
-# 🚀 Portfolio Website - Amjad Khan
+# 🚀 Portfolio Website - Amjad Ali
 
 <div align="center">
-
-![Portfolio Banner](public/hero-image.png)
 
 **A modern, responsive portfolio website showcasing my journey as a Mobile Developer and UI/UX Designer**
 
@@ -36,12 +34,6 @@
 This is my personal portfolio website built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. It showcases my skills, projects, experience, and provides multiple ways to connect with me. The website features a modern, glassmorphic design with smooth animations and a fully responsive layout.
 
 **🔗 Live Website:** [https://mrxamjad.com](https://mrxamjad.com)
-
-### Preview
-
-<div align="center">
-  <iframe src="https://mrxamjad.com" width="100%" height="600" frameborder="0"></iframe>
-</div>
 
 ---
 
@@ -163,10 +155,8 @@ npm start
 ```
 portfolio/
 ├── public/                      # Static assets
-│   ├── profile-image.png       # Profile picture
-│   ├── hero-image.png          # Hero section image
 │   ├── favicon.ico             # Favicon
-│   └── ...                     # Other images and icons
+│   └── ...                     # Project images and icons
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── about/              # About page
@@ -285,7 +275,7 @@ This portfolio is deployed on **Vercel** with a custom domain.
 
 ## 📬 Contact
 
-**Amjad Khan** - Mobile Developer & UI/UX Designer
+**Amjad Ali** - Mobile Developer & UI/UX Designer
 
 - 🌐 Website: [mrxamjad.com](https://mrxamjad.com)
 - 💼 LinkedIn: [linkedin.com/in/mrxamjad](https://linkedin.com/in/mrxamjad)
@@ -333,8 +323,8 @@ If you like this project, please give it a ⭐ on [GitHub](https://github.com/mr
 
 <div align="center">
 
-**Made with ❤️ by [Amjad Khan](https://mrxamjad.com)**
+**Made with ❤️ by [Amjad Ali](https://mrxamjad.com)**
 
-© 2024 Amjad Khan. All rights reserved.
+© 2024 Amjad Ali. All rights reserved.
 
 </div>

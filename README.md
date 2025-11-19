@@ -1,8 +1,10 @@
 # 🚀 Portfolio Website - Amjad Ali
 
+**🌐 Live Site:** [https://mrxamjad.com](https://mrxamjad.com)
+
 <div align="center">
 
-**A modern, responsive portfolio website showcasing my journey as a Mobile Developer and UI/UX Designer**
+**A modern, responsive portfolio website showcasing my journey as a Mobile Developer and Software Engineer**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://mrxamjad.com)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -275,7 +277,7 @@ This portfolio is deployed on **Vercel** with a custom domain.
 
 ## 📬 Contact
 
-**Amjad Ali** - Mobile Developer & UI/UX Designer
+**Amjad Ali** - Mobile Developer & Software Engineer
 
 - 🌐 Website: [mrxamjad.com](https://mrxamjad.com)
 - 💼 LinkedIn: [linkedin.com/in/mrxamjad](https://linkedin.com/in/mrxamjad)

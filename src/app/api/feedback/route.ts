@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         }
 
         // Forward request to external API
-        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://appsail-50035953162.catalystappsail.in';
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://appsail-50035953162.development.catalystappsail.in';
         const response = await fetch(
             `${apiBaseUrl}/feedback/submit`,
             {

@@ -4,8 +4,9 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
 
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://appsail-50035953162.catalystappsail.in';
         const response = await fetch(
-            "https://appsail-50035953162.development.catalystappsail.in/contact/submit",
+            `${apiBaseUrl}/contact/submit`,
             {
                 method: "POST",
                 headers: {

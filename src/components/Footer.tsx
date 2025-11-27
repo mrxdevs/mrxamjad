@@ -162,6 +162,7 @@ export default function Footer() {
               <li><Link href="/services">Service</Link></li>
               <li><Link href="/experience">Resume</Link></li>
               <li><Link href="/projects">Project</Link></li>
+              <li><Link href="/feedback">Feedback</Link></li>
             </ul>
           </div>
 

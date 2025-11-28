@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageAnimator from "../components/PageAnimator";
+import AnalyticsProvider from "../components/AnalyticsProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,13 +33,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
-        <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#14121f] text-zinc-200 w-full overflow-x-hidden">
-          <Navbar />
-          <main className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 w-full">
-            <PageAnimator>{children}</PageAnimator>
-          </main>
-          <Footer />
-        </div>
+        <AnalyticsProvider>
+          <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#14121f] text-zinc-200 w-full overflow-x-hidden">
+            <Navbar />
+            <main className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 w-full">
+              <PageAnimator>{children}</PageAnimator>
+            </main>
+            <Footer />
+          </div>
+        </AnalyticsProvider>
       </body>
     </html>
   );

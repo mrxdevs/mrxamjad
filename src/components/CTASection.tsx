@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
+import { logCTAClick } from "@/lib/analytics";
 
 export default function CTASection() {
     const router = useRouter();
@@ -17,6 +18,7 @@ export default function CTASection() {
     });
 
     const handleQuickSubmit = () => {
+        logCTAClick('Start a Conversation', 'CTA Section');
         setShowForm(true);
     };
 
@@ -42,6 +44,9 @@ export default function CTASection() {
             const data = await response.json();
 
             if (response.status === 200 || response.status === 201 || response.ok) {
+                // Track successful contact form submission
+                logCTAClick('Contact Form Submitted', 'CTA Section');
+
                 toast.success("Message sent successfully! I'll get back to you soon.", {
                     duration: 5000,
                     position: "top-center",

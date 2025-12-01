@@ -160,7 +160,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/services">Service</Link></li>
-              <li><Link href="/experience">Resume</Link></li>
+              <li><a href="https://docx-development.zohostratus.in/Amjad-Flutter-CV.pdf" target="_blank" rel="noopener noreferrer" download="Amjad-Flutter-CV.pdf">Resume</a></li>
               <li><Link href="/projects">Project</Link></li>
             </ul>
           </div>

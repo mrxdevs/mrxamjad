@@ -105,6 +105,15 @@ export default function Hero() {
               <Link href="/projects" className="hero-btn-primary-new">
                 Portfolio ↗
               </Link>
+              <a
+                href="https://docx-development.zohostratus.in/Amjad-Flutter-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Amjad-Flutter-CV.pdf"
+                className="hero-btn-secondary-new"
+              >
+                Resume ↓
+              </a>
               <Link href="/contact" className="hero-btn-secondary-new">
                 Hire me
               </Link>

@@ -12,7 +12,7 @@ export default function Navbar() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Project" },
-    { href: "/experience", label: "Resume" },
+    { href: "https://docx-development.zohostratus.in/Amjad-Flutter-CV.pdf", label: "Resume", isExternal: true },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -22,13 +22,26 @@ export default function Navbar() {
         <nav className="navbar-pill">
           <div className="navbar-content">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`navbar-link ${pathname === link.href ? "active" : ""}`}
-              >
-                {link.label}
-              </Link>
+              link.isExternal ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Amjad-Flutter-CV.pdf"
+                  className="navbar-link"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`navbar-link ${pathname === link.href ? "active" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </div>
 

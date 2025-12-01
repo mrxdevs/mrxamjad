@@ -348,6 +348,15 @@ export default function About() {
             <Link href="/contact" className="cta-button-primary">
               Get In Touch
             </Link>
+            <a
+              href="https://docx-development.zohostratus.in/Amjad-Flutter-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Amjad-Flutter-CV.pdf"
+              className="cta-button-secondary"
+            >
+              Download Resume
+            </a>
             <Link href="/projects" className="cta-button-secondary">
               View Projects
             </Link>

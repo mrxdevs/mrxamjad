@@ -1,8 +1,74 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ServicesPage() {
+    // Add Service schema structured data
+    useEffect(() => {
+        const serviceSchema = {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Mobile Application Development",
+            "provider": {
+                "@type": "Person",
+                "name": "Amjad Ali",
+                "url": "https://mrxamjad.com"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Chennai"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Mobile Development Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Flutter Development",
+                            "description": "Cross-platform mobile app development using Flutter"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "iOS Development",
+                            "description": "Native iOS app development using Swift"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Android Development",
+                            "description": "Native Android app development using Kotlin"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "React Native Development",
+                            "description": "Cross-platform development using React Native"
+                        }
+                    }
+                ]
+            }
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(serviceSchema);
+        document.head.appendChild(script);
+
+        return () => {
+            document.head.removeChild(script);
+        };
+    }, []);
+
     const services = [
         {
             title: "Mobile Development",

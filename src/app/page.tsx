@@ -5,6 +5,16 @@ import WhyHireMe from "../components/WhyHireMe";
 import Testimonials from "../components/Testimonials";
 import BlogSection from "../components/BlogSection";
 import CTASection from "../components/CTASection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Hire Amjad Ali, an expert Flutter, iOS, and Android developer in Chennai. Specializing in mobile app development with 25+ successful projects. Get your app built with cutting-edge technology.",
+  openGraph: {
+    title: "Amjad Ali - Mobile App Developer | Flutter, iOS & Android Expert",
+    description: "Professional mobile app development services in Chennai. Expert in Flutter, iOS, Android, and React Native with 25+ delivered projects.",
+  }
+};
 
 export default function Home() {
   return (

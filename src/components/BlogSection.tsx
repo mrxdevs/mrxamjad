@@ -1,24 +1,37 @@
 import Link from "next/link";
 
+interface BlogPost {
+    id: number;
+    title: string;
+    category: string;
+    author: string;
+    date: string;
+    image: string;
+    excerpt: string;
+    link?: string;
+}
+
 export default function BlogSection() {
     const blogPosts = [
         {
             id: 1,
-            title: "Design Unraveled: Behind the Scenes of UI/UX Magic",
-            category: "UI/UX Design",
-            author: "Amjad Ali",
-            date: "10 Nov, 2023",
-            image: "gradient-purple",
-            excerpt: "Exploring the creative process behind stunning user interfaces and seamless experiences.",
+            title: "\"Null\" Is Everywhere: From WhatsApp Glitches to Flutter Code [Dart Null Safety]",
+            category: "Flutter Development",
+            author: "Mrxamjad",
+            date: "14 May, 2025",
+            image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*ugJZgOqpnI0FkdI9BQkCTQ.jpeg",
+            excerpt: "Exploring null safety in Dart and how it helps Flutter developers write more robust and error-free code.",
+            link: "https://medium.com/@mrxamjad/null-is-everywhere-from-whatsapp-glitches-to-flutter-code-dart-null-safety-34ba198a5af6",
         },
         {
             id: 2,
-            title: "Building Scalable Mobile Apps: Best Practices",
-            category: "App Design",
-            author: "Amjad Ali",
-            date: "09 Oct, 2023",
-            image: "gradient-green",
-            excerpt: "Learn the essential techniques for creating mobile applications that scale effortlessly.",
+            title: "Push Notifications in Flutter (iOS & Android)",
+            category: "Flutter Development",
+            author: "Mrxamjad",
+            date: "26 Apr, 2025",
+            image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*muoRZpr5jJaBNhNvV627bw.png",
+            excerpt: "Complete guide for Push notifications setup for Android and iOS with Flutter, Firebase, and APNs.",
+            link: "https://medium.com/@mrxamjad/push-notifications-in-flutter-ios-android-b0c0e0e0e0e0",
         },
         {
             id: 3,
@@ -54,7 +67,11 @@ export default function BlogSection() {
                     <article key={post.id} className="blog-card">
                         <div
                             className="blog-card-image"
-                            style={{ background: gradients[post.image as keyof typeof gradients] }}
+                            style={{
+                                background: post.image.startsWith('http')
+                                    ? `url(${post.image}) center/cover no-repeat`
+                                    : gradients[post.image as keyof typeof gradients]
+                            }}
                         >
                             <div className="blog-mockup">
                                 <div className="mockup-screen">
@@ -65,9 +82,14 @@ export default function BlogSection() {
                                     </div>
                                 </div>
                             </div>
-                            <Link href={`/blog/${post.id}`} className="blog-arrow-btn">
+                            <a
+                                href={post.link || `/blog/${post.id}`}
+                                className="blog-arrow-btn"
+                                target={post.link ? "_blank" : undefined}
+                                rel={post.link ? "noopener noreferrer" : undefined}
+                            >
                                 ↗
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="blog-card-content">
@@ -81,7 +103,17 @@ export default function BlogSection() {
                             </div>
 
                             <h3 className="blog-card-title">
-                                <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                                {post.link ? (
+                                    <a
+                                        href={post.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {post.title}
+                                    </a>
+                                ) : (
+                                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                                )}
                             </h3>
                         </div>
                     </article>

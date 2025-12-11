@@ -28,21 +28,22 @@ export const experience = [
   },
   {
     company: "DIGIWELLIE TECHNOLOGY",
-    role: "Mobile Application Developer",
+    role: "Founder & Mentor",
     location: "Chennai",
-    period: "May 2023 – Nov 2023",
-    type: "Part-Time",
+    period: "May 2023 – Present",
+    type: "Hybrid",
     bullets: [
-      "Created high-performance apps using Flutter, Firebase, and MongoDB, serving 10K+ users.",
-      "Integrated Stripe and SubPaisa payments, optimizing load times by 50%.",
-      "Led agile sprints; maintained 95% test coverage with automated workflows.",
+      "Lead the team of 20+ developers to deliver 50+ projects in diverse domains.",
+      "Spearheaded end-to-end development of high-performance mobile applications using Flutter, Firebase, and MongoDB, attracting over 10,000 users. Led agile development processes, ensuring 95% test coverage and continuous integration pipelines for robust product delivery.",
     ],
   },
+
   {
     company: "REGAMI SOLUTIONS",
     role: "Mobile App Developer (Intern)",
     location: "Chennai",
     period: "Jan 2023 – Apr 2023",
+    type: "Internship",
     bullets: [
       "Built IoT apps with BLE, WebRTC, and WebSocket in Kotlin/Swift for real-time monitoring.",
       "Designed MD3 UIs with real-time data sync via Firebase.",

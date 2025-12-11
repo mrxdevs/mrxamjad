@@ -203,9 +203,9 @@ export default function Footer() {
           Copyright© {new Date().getFullYear()} {contact.name}. All Rights Reserved.
         </p>
         <div className="footer-legal">
-          <Link href="/privacy">User Terms & Conditions</Link>
+          <Link href="/terms">User Terms & Conditions</Link>
           <span className="footer-divider">|</span>
-          <Link href="/terms">Privacy Policy</Link>
+          <Link href="/privacy">Privacy Policy</Link>
         </div>
       </div>
     </footer>

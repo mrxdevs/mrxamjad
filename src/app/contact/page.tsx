@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact - Hire Mobile App Developer",
+    description: "Get in touch with Amjad Ali for your mobile app development project. Expert Flutter, iOS, and Android developer in Chennai. Free consultation available.",
+    keywords: "hire mobile app developer, contact Flutter developer, hire iOS developer Chennai, Android developer contact, mobile app consultation",
+    openGraph: {
+        title: "Contact Amjad Ali - Mobile App Developer",
+        description: "Hire an expert mobile app developer for your next project. Specializing in Flutter, iOS, and Android development in Chennai.",
+    }
+};
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({

@@ -51,9 +51,7 @@ export default function WhyHireMe() {
                         Why <span className="gradient-orange">Hire me</span>?
                     </h2>
                     <p className="why-hire-description-redesign">
-                        I'm a passionate mobile developer who transforms ideas into stunning,
-                        user-friendly applications. With expertise in React Native, Flutter, and native
-                        development, I create seamless experiences that users love and businesses trust.
+                        I'm a Founder, SDE, and Flutter, iOS, and Android developer crafting user experiences and delivering cutting-edge solutions with an agile and affordable approach.
                     </p>
 
                     {/* Stats */}

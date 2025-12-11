@@ -51,17 +51,13 @@ export default function About() {
             </h1>
             <div className="about-description">
               <p>
-                Hello! I'm <strong>{contact.name}</strong>, a passionate Mobile Developer and UI/UX Designer
-                with a knack for creating intuitive, beautiful, and high-performing digital experiences.
+                I'm a Founder, Software Development Engineer (SDE), and a passionate Flutter, iOS, and Android developer. I specialize in crafting exceptional user experiences and delivering cutting-edge mobile solutions with an agile and affordable approach.
               </p>
               <p>
-                With over 2 years in the field, I thrive on turning complex problems into elegant,
-                user-centric solutions. My approach combines technical expertise with design thinking
-                to deliver products that users love.
+                With a track record of <strong>25+ projects completed</strong> and serving <strong>15+ clients</strong>, I bring a wealth of experience in transforming ideas into robust and user-centric applications.
               </p>
               <p>
-                When I'm not coding or designing, you can find me exploring new technologies,
-                contributing to open-source projects, or enjoying the great outdoors.
+                As the founder of Digiwellie Technology, I'm dedicated to innovation and excellence. Hire me to bring your vision to life with high-quality, impactful mobile development.
               </p>
             </div>
           </div>

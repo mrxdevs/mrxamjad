@@ -3,16 +3,6 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-export const metadata = {
-    title: "Services - Mobile App Development | Flutter, iOS & Android",
-    description: "Professional mobile app development services: Flutter development, iOS apps, Android apps, React Native, UI/UX design, and web development. Expert solutions in Chennai with 25+ successful projects.",
-    keywords: "mobile app development services, Flutter development, iOS app development, Android app development, React Native services, UI/UX design, web development Chennai",
-    openGraph: {
-        title: "Mobile App Development Services | Flutter, iOS & Android Expert",
-        description: "End-to-end mobile app development services including Flutter, iOS, Android, React Native, and web development. Professional solutions in Chennai.",
-    }
-};
-
 export default function ServicesPage() {
     // Add Service schema structured data
     useEffect(() => {

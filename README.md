@@ -288,7 +288,7 @@ This portfolio is deployed on **Vercel** with a custom domain.
 ### Coding Profiles
 - 💻 LeetCode: [@mrxamjad](https://leetcode.com/mrxamjad)
 - 🥷 Coding Ninjas: [@mrxamjad](https://www.naukri.com/code360/profile/mrxamjad)
-- 📚 TakeUForward: [@mrxamjad](https://takeuforward.org/plus/profile/mrxamjad)
+- 📚 TakeUForward: [@mrxamjad](https://takeuforward.org/profile/mrxamjad)
 
 ---
 

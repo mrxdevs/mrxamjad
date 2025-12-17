@@ -190,7 +190,7 @@ export default function About() {
         <div className="takeuforward-stats-container">
           <div className="takeuforward-profile-card">
             <a
-              href="https://takeuforward.org/plus/profile/mrxamjad"
+              href="https://takeuforward.org/profile/mrxamjad"
               target="_blank"
               rel="noopener noreferrer"
               className="takeuforward-link"
@@ -221,7 +221,7 @@ export default function About() {
                   Explore my DSA learning path, problem-solving progress, and course completion on TakeUForward Plus
                 </p>
                 <a
-                  href="https://takeuforward.org/plus/profile/mrxamjad"
+                  href="https://takeuforward.org/profile/mrxamjad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="placeholder-button"

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { contact, achievements, education } from "../../data/profile";
+import TufHeatmap from "../../components/TufHeatmap";
+import TufDsaProgress from "../../components/TufDsaProgress";
 
 export default function About() {
   const [imageError, setImageError] = useState(false);
@@ -206,34 +208,8 @@ export default function About() {
               </div>
             </a>
           </div>
-          {/* <div className="takeuforward-stats-grid">
-            <div className="takeuforward-placeholder">
-              <div className="placeholder-content">
-                <div className="placeholder-icon-large">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" />
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M12 1v6m0 6v6" />
-                  </svg>
-                </div>
-                <h3 className="placeholder-title">TakeUForward Plus Profile</h3>
-                <p className="placeholder-description">
-                  Explore my DSA learning path, problem-solving progress, and course completion on TakeUForward Plus
-                </p>
-                <a
-                  href="https://takeuforward.org/profile/mrxamjad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="placeholder-button"
-                >
-                  View Full Profile
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div> */}
+          <TufDsaProgress username="mrxamjad" />
+          <TufHeatmap username="mrxamjad" />
         </div>
       </section>
 

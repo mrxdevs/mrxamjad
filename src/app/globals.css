@@ -7399,7 +7399,61 @@ eUForward Stats Section */
 .heatmap-grid-wrapper {
   overflow-x: auto;
   margin: 1.5rem 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  cursor: grab;
+  scroll-behavior: smooth;
+  position: relative;
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 133, 247, 0.5) rgba(255, 255, 255, 0.05);
+}
+
+.heatmap-grid-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.heatmap-grid-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.heatmap-grid-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.heatmap-grid-wrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #34d399, #10b981);
+}
+
+.heatmap-grid-wrapper:active {
+  cursor: grabbing;
+}
+
+/* Scroll indicator shadows */
+.heatmap-grid-wrapper::before,
+.heatmap-grid-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 1rem;
+  width: 40px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.heatmap-grid-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(17, 24, 39, 0.8), transparent);
+}
+
+.heatmap-grid-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(17, 24, 39, 0.8), transparent);
 }
 
 .heatmap-calendar {
@@ -7559,183 +7613,185 @@ eUForward Stats Section */
     min-width: 10px;
     min-height: 10px;
   }
-}/* DSA Progress Styles */
+}
+
+/* DSA Progress Styles */
 .dsa-progress-container {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .dsa-progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .dsa-progress-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
 }
 
 .total-solved {
-    display: flex;
-    align-items: baseline;
-    gap: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
 }
 
 .solved-count {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #10b981;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
 }
 
 .total-count {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.6);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dsa-progress-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .difficulty-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .difficulty-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .difficulty-card.easy {
-    border-left: 3px solid #10b981;
+  border-left: 3px solid #10b981;
 }
 
 .difficulty-card.medium {
-    border-left: 3px solid #f59e0b;
+  border-left: 3px solid #f59e0b;
 }
 
 .difficulty-card.hard {
-    border-left: 3px solid #ef4444;
+  border-left: 3px solid #ef4444;
 }
 
 .difficulty-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .difficulty-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
 }
 
 .difficulty-count {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .progress-bar {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 0.75rem;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
 }
 
 .progress-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 0.5s ease;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
 }
 
 .easy-fill {
-    background: linear-gradient(90deg, #10b981, #34d399);
+  background: linear-gradient(90deg, #10b981, #34d399);
 }
 
 .medium-fill {
-    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }
 
 .hard-fill {
-    background: linear-gradient(90deg, #ef4444, #f87171);
+  background: linear-gradient(90deg, #ef4444, #f87171);
 }
 
 .percentage {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    text-align: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: right;
 }
 
 .dsa-progress-loading,
 .dsa-progress-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
-    color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dsa-progress-error {
-    color: #ef4444;
+  color: #ef4444;
 }
 
 /* Update heatmap stats styling */
 .heatmap-stats {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .activity-stat {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .activity-stat strong {
-    color: white;
-    font-weight: 600;
+  color: white;
+  font-weight: 600;
 }
 
 .activity-stat-divider {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-    .dsa-progress-grid {
-        grid-template-columns: 1fr;
-    }
+  .dsa-progress-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .dsa-progress-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .dsa-progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .solved-count {
-        font-size: 1.75rem;
-    }
+  .solved-count {
+    font-size: 1.75rem;
+  }
 
-    .total-count {
-        font-size: 1.1rem;
-    }
+  .total-count {
+    font-size: 1.1rem;
+  }
 }

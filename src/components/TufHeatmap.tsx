@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface ActivityData {
     dsa_practice_problem?: number;
@@ -35,6 +35,12 @@ export default function TufHeatmap({ username = 'mrxamjad' }: TufHeatmapProps) {
     const [heatmapData, setHeatmapData] = useState<HeatmapData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    // Drag to scroll state
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
 
     // Year options: 2026 and 2025 only
     const yearOptions = [2026, 2025];
@@ -88,6 +94,38 @@ export default function TufHeatmap({ username = 'mrxamjad' }: TufHeatmapProps) {
     };
 
     const activityCounts = getActivityCounts();
+
+    // Drag to scroll handlers
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!scrollContainerRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+        setScrollLeft(scrollContainerRef.current.scrollLeft);
+        scrollContainerRef.current.style.cursor = 'grabbing';
+        scrollContainerRef.current.style.userSelect = 'none';
+    };
+
+    const handleMouseLeave = () => {
+        if (!scrollContainerRef.current) return;
+        setIsDragging(false);
+        scrollContainerRef.current.style.cursor = 'grab';
+        scrollContainerRef.current.style.userSelect = 'auto';
+    };
+
+    const handleMouseUp = () => {
+        if (!scrollContainerRef.current) return;
+        setIsDragging(false);
+        scrollContainerRef.current.style.cursor = 'grab';
+        scrollContainerRef.current.style.userSelect = 'auto';
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollContainerRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainerRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed multiplier
+        scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     const getActivityLevel = (total: number): number => {
         if (total === 0) return 0;
@@ -203,7 +241,14 @@ export default function TufHeatmap({ username = 'mrxamjad' }: TufHeatmapProps) {
                     </span>
                 </div>
             </div>
-            <div className="heatmap-grid-wrapper">
+            <div
+                ref={scrollContainerRef}
+                className="heatmap-grid-wrapper"
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+            >
                 <div className="heatmap-calendar">{generateCalendarGrid()}</div>
             </div>
             <div className="heatmap-legend">
